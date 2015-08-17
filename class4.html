@@ -4,11 +4,11 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Class 4 ~ Javascript ~ Girl Develop IT</title>
+		<title>Class 4 ~ JavaScript for Beginners ~ Girl Develop It</title>
 
-		<meta name="description" content="This is the official Girl Develop It Core Intro Javascript course. Material based on original material by Sara Chipps, Pamela Fox, Alexis Goldstein, Izzy Johnston and Leo Newball.
+		<meta name="description" content="This is an introduction to JavaScript curriculum, developed by Sylvia Richardson for the Raleigh/Durham chapter.
 
-    The course is meant to be taught in 4 two-hour sections. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
+        The course is meant to be taught in 4 two-hour sections. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
 		<meta name="author" content="Girl Develop It">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -16,13 +16,13 @@
 
 		<link rel="stylesheet" href="reveal/css/reveal.css">
 		<link rel="stylesheet" href="reveal/css/theme/gdidefault.css" id="theme">
+		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- For syntax highlighting -->
 		<!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
 		<!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
 
 		<!-- If use the PDF print sheet so students can print slides-->
-		
 		<link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
 
 		<!--[if lt IE 9]>
@@ -33,337 +33,263 @@
 	<body>
 
 		<div class="reveal">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+        <!-- Opening slide -->
+            <section>
+                <img src="images/gdi_logo_badge.png" alt="GDI logo">
+                <h3>JavaScript for Beginners</h3>
+                <h4>Class 4</h4>
+            </section>
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-			  <!-- Opening slide -->
-        <section>
-          <img src = "images/gdi_logo_badge.png">
-          <h3>Beginning Javascript</h3>
-          <h4>Class 4</h4>
-        </section>
-        
-        <!-- Welcome-->
-        <section>
-          <h3>Welcome!</h3>
-          <div class = "left-align">
-          <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
-          <p class ="green">Some "rules"</p>
-          <ul>
-            <li>We are here for you!</li>
-            <li>Every question is important</li>
-            <li>Help each other</li>
-            <li>Have fun</li>
-          </ul>
-          </div>
-        </section>
-        
-        <section>
-          <h3>Warning</h3>
-          <div style ="font-size=1.2em" class = "yellow">
-            The following few slides have lots of acronyms and jargon.
-          </div>
-          <div>On behalf of developers everywhere, we apologize</div>
-        </section>
-        <!-- What is an API-->
-        <section>
-          <h3>What is an API?</h3>
-          <ul>
-            <li class = "fragment"><span class = "yellow">A</span>pplication <span class = "yellow">P</span>rogramming <span class = "yellow">I</span>nterface</li>
-            <li class = "fragment">Data structure and rules for accessing a web-based application</li>
-            <li class = "fragment">How we can access information from sites that are not our own (Twitter, Meetup, Facebook, Foursquare)</li>
-          </ul>
-        </section>
-        
-        <section>
-          <h3>What is an API?</h3>
-          <ul>
-            <li class = "fragment">Primary role: a channel for applications to work together
-              <ul>
-                <li class = "fragment">Your website and the Twitter API</li>
-                <li class = "fragment">Twitter's mobile app and the Twitter API</li>
-                <li class = "fragment">Hootsuite's mobile app and the Twitter API</li>
-            </li>
-          </ul>
-        </section>
-        
-        <!-- What is AJAX-->
-        <section>
-          <h3>What is AJAX?</h3>
-          <ul>
-            <li class = "fragment"><span class = "yellow">A</span>synchronous <span class = "yellow">J</span>avaScript <span class = "yellow">a</span>nd <span class = "yellow">X</span>ML</li>
-            <li class = "fragment">Method to communicate to a server or API</li>
-            <li class = "fragment">Asynchronous means:
-              <ul>
-                <li class = "fragment">I ask Twitter for all the tweets ever!</li>
-                <li class = "fragment">That will take a while</li>
-                <li class = "fragment">My <span class = "green">whole website</span> could be <span class = "green">locked up</span> while I wait!</li>
-                <li class = "fragment">Or, my call can be <span class = "blue">'asynchronous'</span> and my website will just <span class = "blue">listen for Twitter's response</span> with one ear, but go about <span class = "blue">normal business until the response arrives</span>.
-              </ul>
-            </li>
-            <li class = "fragment">Requests and results can be in JavaScript or XML</li>
-          </ul>
-        </section>
-        
-        <!-- What is REST-->
-        <section>
-          <h3>What is REST?</h3>
-          <ul>
-            <li class = "fragment"><span class = "yellow">Re</span>presentational <span class = "yellow">S</span>tate <span class = "yellow">T</span>ransfer</li>
-            <li class = "fragment">REST is a way to ask an API for information by using a URL.</li>
-            <li class = "fragment">REST Urls are created with the following syntax:
-              <ul>
-                <li class = "fragment">http://ApiSite.com/method?parameter=value&amp;parameter=value</li>
-                <li class = "fragment"><span class = "blue">Method</span> -- what you want from the API. Defined by API documentations</li>
-                <li class = "fragment"><span class = "blue">Parameter</span> -- a type of filter or restraint. Defined by API documentations</li>
-                <li class = "fragment"><span class = "blue">Value</span> -- value for parameter. Defined by you!</li>
-              </ul>
-            </li>
-            
-          </ul>
-        </section>
-        
-        <section>
-          <h3>Where do I learn about an API?</h3>
-          <p>All (good) APIs have documentation</p>
-          <ul>
-            <li>Facebook (<a href = "https://developers.facebook.com/" target = "_blank">https://developers.facebook.com/</a>)</li>
-            <li>Twitter (<a href = "https://dev.twitter.com/" target = "_blank">https://dev.twitter.com/</a>)</li>
-            <li>Meetup (<a href = "http://www.meetup.com/meetup_api/" target = "_blank">http://www.meetup.com/meetup_api/</a>)</li>
-            <li>FourSquare (<a href = "https://developer.foursquare.com/">https://developer.foursquare.com/</a>)</li>
-        </section>
-        
-        <!-- What is JSON-->
-        <section>
-          <h3>What is JSON?</h3>
-          <ul>
-            <li class = "fragment"><span class = "yellow">J</span>ava<span class = "yellow">S</span>cript <span class = "yellow">O</span>bject <span class = "yellow">N</span>otation</li>
-            <li class = "fragment">Format for data returned from APIs</li>
-            <li class = "fragment">You've seen it before!</li>
-            <li class = "fragment">JavaScript objects</li>
-          </ul>
-        </section>
-        
-        <!-- Getting started!-->
-        <section>
-         <h3>Getting started!</h3>
-         <p>Get an API Key</p>
-         <p class = "fragment green">A what?</p>
-         <ul>
-           <li class = "fragment">Api Key or Developer Key is a way for an API to identify you</li>
-           <li class = "fragment">More secure for an API (Know who is using their API)</li>
-           <li class = "fragment">More secure for you -- people can't pretend to be your website</li>
-          </ul>
-        </section>
-        
-        <!-- Meetup-->
-        <section>
-          <h3>Meetup API</h3>
-          <p>We will be using the Meetup API</p>
-          <p><a href = "http://www.meetup.com/meetup_api/" target = "_blank">Documentation</a></p>
-          <img src = "images/meetup.png" />
-        </section>
-        
-        <section>
-          <h3>Meetup API</h3>
-          <p>We will be finding interesting Meetups near us</p>
-          <p><a href = "http://www.meetup.com/meetup_api/docs/2/open_events/" target = "_blank">Open Events</a></p>
-          <img src = "images/meetup_open.png"/>
-        </section>
-        
-        <section>
-          <h3>Meetup API</h3>
-          <p>Try it in the meetup console</p>
-          <p><a href = "http://www.meetup.com/meetup_api/console/?path=/2/open_events" target = "_blank">Open Events Console</a></p>
-          <img src = "images/meetup_console.png"/>
-        </section>
-        
-        <section>
-          <h3>Meetup API</h3>
-          <p>Try it in the meetup console</p>
-          <img src = "images/meetup_results.png"/>
-        </section>
-        
-        <!-- jQuery Ajax-->
-        <section>
-          <h3>jQuery Ajax</h3>
-          <p>jQuery method to perform an AJAX call</p>
-          <div class = "fragment">
-            <pre><code contenteditable class = "javascript">
-    $.ajax({
-  		url: 'http://site.com',
-  		data: {
-  		  parameter: 'value',
-  		  parameter: 'value'
-  		},
-  		crossDomain: true,
-  		dataType: 'jsonp',
-  		type: "GET",
-  		success: function (data) {
-  		    // code with data returned
-  		},
-  		error: function(data) {
-  			 // code with error returned
-  		}				
-  	});
-          	</code></pre>
-          </div>
-        </section>
-        
-        <section>
-          <h3>jQuery Ajax</h3>
-          <div class = "fragment">
-            <pre><code contenteditable class = "javascript">
-    $.ajax({
-  		url: 'http://site.com',
-  		...			
-  	});
-          	</code></pre>
-          </div>
-          <ul>
-            <li class = "fragment"> $.ajax() -- jQuery method for sending AJAX requests</li>
-            <li class = "fragment">Takes one parameter -- a JavaScript object</li>
-            <li class = "fragment">Note the {}</li>
-            <li class = "fragment"><span class = "blue">url</span> -- first property, the url where you will send the AJAX request</li>
-          </ul>
-        </section>
-        
-        <section>
-          <h3>jQuery Ajax</h3>
-          <div class = "fragment">
-            <pre><code contenteditable class = "javascript">
-	...
-	data: {
-	  parameter: 'value',
-	  parameter: 'value'
-	},
-	...	
-          	</code></pre>
-          </div>
-          <ul>
-            <li class = "fragment"><span class = "blue">data</span> --  a JavaScript object with all the parameters for the AJAX request</li>
-            <li class = "fragment">Some parameters in the <a href = "http://www.meetup.com/meetup_api/docs/2/open_events/" target = "_blank">Meetup open events</a>
-              <ul>
-                <li>key (refers to api key)</li>
-                <li>city</li>
-                <li>country</li>
-                <li>topic</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-        
-        <section>
-          <h3>jQuery Ajax</h3>
-          <div class = "fragment">
-            <pre><code contenteditable class = "javascript">
-	...
-  crossDomain: true,
-	dataType: 'jsonp',
-	type: "GET",
-	...	
-          	</code></pre>
-          </div>
-          <ul>
-            <li class = "fragment"><span class = "blue">crossDomain</span> -- are you sending the request to a domain that is not your own?</li>
-            <li class = "fragment"><span class = "blue">dataType</span> -- how will you evaluate the data returned</li>
-            <li class = "fragment"><span class = "blue">type</span> -- what type of request is it?
-              <ul>
-                <li>GET -- retrieve data</li>
-                <li>POST -- post new data</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-        
-        
-        <section>
-          <h3>jQuery Ajax</h3>
-          <div class = "fragment">
-            <pre><code contenteditable class = "javascript">
-	...
-  success: function (data) {
-	    // code with data returned
-	},
-	error: function(data) {
-		 // code with error returned
-	}
-	...	
-          	</code></pre>
-          </div>
-          <ul>
-            <li class = "fragment"><span class = "blue">success</span> -- code that will execute if results are sent back successfully</li>
-            <li class = "fragment"><span class = "blue">error</span> -- code that will execute if results return an error</li>
-          </ul>
-        </section>
-        
-        <!-- Exercise-->
-        <section>
-          <h3>Let's Develop It!</h3>
-          <ul>
-            <li>Create a new div with the id "events"</li>
-            <li>Create a new function in your javascript that calls <a href = "http://www.meetup.com/meetup_api/docs/2/open_events/" target = "_blank">Meetup open events</a> method</li>
-            <li>Add parameters such as city, state or lat, lon to find meetups near you</li>
-            <li>Add a parameter such as category or topic to find meetups that you would be interested in</li>
-            <li>For now, just look at the results in the console.log()</li>
-            <li>Call this new function in document ready</li>
-          </ul>
-        </section>
-        
-        <section>
-          <h3>Let's Develop It!</h3>
-          <img src = "images/console.png"/>
-        </section>
-        
-        <section>
-          <h3>Let's Develop It!</h3>
-          <ul>
-            <li>Create a new function that can parse results.</li>
-            <li>Remember that the results will be an array of objects</li>
-            <li>Loop through your results</li>
-            <li>For each result, create a new div</li>
-            <li>Get the name, description, group name, and url of each event</li>
-            <li>Append them to your new div</li>
-            <li>Append the new div to the div "events"</li>
-          </ul>
-        </section>
-        
-        <section>
-          <h3>Let's Develop It!</h3>
-          <ul>
-            <li>Create a form for users to enter in their location and a topic of their choosing</li>
-            <li>On submit, call the same Meetup open events method, but with the user's values</li>
-          </ul>
-        </section>
-        
-        <section>
-          <h3>Bonus</h3>
-          <p class = "blue">Still have time? Can't stop learning?</p>
-          <div class = "left-align">
-            <p>One of the best things about jQuery is the developer community</p>
-            <p>They love to build!</p>
-            <p>Check out some great plugins:</p>
-            <ul>
-              <li><a href = "http://jqueryui.com/" target = "_blank">jQuery UI</a> -- accordions, drag and drop, resize, sort</li>
-              <li><a href = "http://leandrovieira.com/projects/jquery/lightbox/" target = "_blank">jQuery Lightbox</a> -- Pop up gallery of images!</li>
-              <li><a href = "http://www.jqueryplugins.com/" target = "_blank">And so many more!</a></li>
-            </ul>
-          </div>
-        </section>
-        <!-- -->
-        <section>
-          <h2>Questions?</h2>
-          <div style = "font-size:1200%; height:100%; margin-top:40%" class ="blue">?
-            <div class ="clear"></div></div>
-        </section>
-			</div>
+
+			<section>
+				<h3>Events</h3>
+				<p>An 'event' is a type of object that is created when the user interacts with a web page.</p>
+                <p>For example, JS creates an event when a user clicks an element.</p>
+                <pre><code>
+element.onclick = function () {
+  //code to execute when the click happens
+};
+				</code></pre>
+			</section>
+            <section>
+				<h3>Types of Events</h3>
+				<p>There are a <a href="http://www.w3schools.com/jsref/dom_obj_event.asp">variety of events</a>. Some of the most common:</p>
+                <ul>
+                    <li>onclick: The event occurs when the user clicks on an element</li>
+                    <li>onmouseover: The event occurs when the pointer is moved onto an element</li>
+                    <li>onkeyup: The event occurs when the user releases a key</li>
+                    <li>onload: The event occurs when a document has been loaded</li>
+                    <li>onfocus: The event occurs when an element gets focus</li>
+                </ul>
+			</section>
+            <section>
+                <h3>Events and Code</h3>
+                <p>How do you make an event trigger some code?</p>
+                <ol>
+                    <li>Break your code into functions</li>
+                    <li>Associate a function with a JavaScript event</li>
+                </ol>
+			</section>
+            <section>
+                <h3>Calling Functions from HTML</h3>
+                <p>You can call a function directly from your HTML code:</p>
+			    <pre><code>
+&lt;button id="clickMe" onclick="sayHi()"&gt;Click Me!&lt;/button&gt;
+				</code></pre>
+                <pre><code>
+function sayHi() {
+    alert ('Hi!');
+}
+				</code></pre>
+            </section>
+            <section>
+                <h3>Listening Functions</h3>
+                <p>Listening functions work like many of the other things we have done. First, find the object:</p>
+                <pre><code>
+var myTarget = document.getElementById('clickMe');
+                </code></pre>
+                <p>Then add an event to that object:</p>
+                <pre><code>
+myTarget.onclick=function(){
+     alert ('Hi!');
+}
+                </code></pre>
+			</section>
+            <section>
+				<h3>Let's Develop It</h3>
+                <p>Download <a href="files/class4.zip">this week's sample code</a>.</p>
+                <p>Make some JavaScript code fire after an <code>onmouseover</code> event. Try adding the event to the HTML and adding a listening function.</p>
+
+			</section>
+
+            <section>
+				<h3>Preventing Defaults</h3>
+				<p>Elements like buttons and links have default behaviors. However, the <code>event</code> objects has a built-in method to handle that:</p>
+                <pre><code>
+element.onclick = function (event) {
+  event.preventDefault();
+};
+
+				</code></pre>
+			</section>
+
+			<section>
+				<h3>This</h3>
+				<p>The keyword <code>this</code> references the element that the user has just interacted with:</p>
+                <pre><code>
+element.onmouseover = function (event) {
+  console.log(this);
+};
+
+element.onclick = function (event) {
+  this.style.backgroundColor = 'red';
+  this.innerHTML = 'I've been clicked!';
+};
+				</code></pre>
+			</section>
+            <section>
+				<h3>Let's Develop It</h3>
+                <p>Write code that targets this link:</p>
+                <pre><code>
+&lt;a href="http://girldevelopit.com/" id="gdiLink"&gt;Girl Develop It&lt;/a&gt;
+				</code></pre>
+                <p>When a user clicks the link, the page should display an error message instead of going to the Girl Develop It homepage.</p>
+			</section>
+
+
+			<section>
+                <h3>Forms</h3>
+                <p>You can collect information from users to use in functions. The most common method is an HTML form:</p>
+                <pre><code>
+&lt;form id="temperatureForm"&gt;
+    &lt;label for="temp"&gt;Temperature:&lt;/label&gt; &lt;input type="text" id="temp" size="3"/&gt; degrees in
+    &lt;input type="radio" name="tempFormat" value="F" checked /&gt;Fahrenheit
+    &lt;input type="radio" name="tempFormat" value="C" /&gt;Celsius &lt;br /&gt;
+    &lt;label for="submitButton"&gt;&lt;/label&gt; &lt;input id="tempSubmitButton" type="submit" value="Submit" /&gt;
+&lt;/form&gt;
+				</code></pre>
+			</section>
+            <section>
+                <h3>Retrieving Form Data</h3>
+                <p>You retrieve the values of form elements using the <code>value</code> method:</p>
+                <pre><code>
+var temperature = document.getElementById('temp').value;
+console.log (temperature);
+				</code></pre>
+                <p>You can retrieve the value of a form at any time. Try <code>onblur</code> (when a form element loses focus).</p>
+			</section>
+            <section>
+                <h3>Radio Buttons</h3>
+                <p>Radio buttons usually do not have IDs, so you will need to use an array:</p>
+                <pre><code>
+var radios = document.getElementsByName('tempFormat');
+
+for (var i = 0, length = radios.length; i &lt; length; i++) {
+    if (radios[i].checked) {
+        var radioButtonValue = radios[i].value;
+        // only one radio can be checked, so stop now
+        break;
+    }
+}
+				</code></pre>
+			</section>
+             <section>
+                <h3>Submit buttons</h3>
+                <p>If you are going to retrieve form values with the submit button, be sure to prevent the default action!</p>
+                <pre><code>
+var submitButton = document.getElementById('tempSubmitButton');
+submitButton.onclick = function () {
+    event.preventDefault();
+    var temperature = document.getElementById('temp').value;
+    console.log (temperature);
+}
+<!--line 84 has a purple { opening bracket, but line 188 has a white } closing bracket. should they be the same color?-->
+				</code></pre>
+			</section>
+            <section>
+				<h3>Let's Develop It</h3>
+                <p>Collect a value from the input box on the page. Use it inside a function of some kind. For example, collect a number and multiply it by five or collect a name and display a greeting.</p>
+			</section>
+
+            <section>
+				<h3>Timing Events</h3>
+				<p>In JavaScript, it is possible to execute some code at specified time intervals.</p>
+                <ul>
+                    <li><code>setInterval()</code> executes a function over and over again, at specified time intervals</li>
+                    <li><code>setTimeout()</code>  executes a function, once, after waiting a specified number of milliseconds</li>
+                </ul>
+			</section>
+            <section>
+				<h3>setInterval</h3>
+				<p>The syntax for <code>setInterval()</code> is:</p>
+                <pre><code>
+setInterval(function, milliseconds);
+				</code></pre>
+                <p>For example, this is a simple clock:</p>
+                <pre><code>
+var simpleClock = setInterval(myClock, 1000);
+function myClock() {
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+    document.getElementById('resultsBox').innerHTML = t;
+}
+<!--line 214 has a purple { opening bracket, but line 218 has a white closing bracket, should it also be purple?}  -->
+				</code></pre>
+			</section>
+            <section>
+				<h3>clearInterval</h3>
+				<p>You can use <code>clearInterval()</code> to stop a setInterval loop:</p>
+                <pre><code>
+clearInterval(intervalVariable)
+				</code></pre>
+                <p>To stop our clock:</p>
+                <pre><code>
+function myStopFunction() {
+    clearInterval(simpleClock);
+}
+<!--line 230 has a purple opening bracket { but line 232 has a white } closing bracket, should they be the same color?  -->
+				</code></pre>
+			</section>
+            <section>
+				<h3>setTimeout</h3>
+				<p>The method <code>setTimeout()</code> is similar, but it will only run once:</p>
+                <pre><code>
+setTimeout(function, milliseconds);
+				</code></pre>
+                <p>For example, this code will wait 3 seconds, then create a popup box, unless the user triggers the <code>clearTimeout():</code></p>
+                <pre><code>
+var helloBox;
+function sayHello() {
+    helloBox = setTimeout(function(){alert('Hello')},3000);
+}
+function dontSayIt() {
+    clearTimeout(helloBox);
+}
+<!--line 245 and line 248 have purple opening brackets, but lines 247 and 250 have white closing brackets, should they all be the same colors?  -->
+				</code></pre>
+			</section>
+            <section>
+				<h3>Animations</h3>
+				<p>By changing values slowly over time, we can create simple animations:</p>
+                <pre><code>
+var targetPic = document.getElementById('turtlePic');
+targetPic.onclick = function () {
+    var leftMarginValue = 0;
+    function increaseMargin() {
+        leftMarginValue++  // update parameter each time
+        targetPic.style.marginLeft = leftMarginValue + 'px' //set left margin
+        if (leftMarginValue === 200)  // check finish condition {
+            clearInterval(movePic);
+        }
+    var movePic = setInterval(function(){increaseMargin()}, 10) // update every 10ms
+}
+<!--lines 259, and 261, have purple opening { brackets, lines 266, and 268} have white closing brackets. line 267 has a purple opening bracket { and a white closing bracket }, should these all match? -->
+				</code></pre>
+			</section>
+            <section>
+				<h3>Let's Develop It</h3>
+                <p>Using the function from the previous slide as a base, try changing some animation parameters. What happens?</p>
+			</section>
+
+			<section>
+				<h3>Resources</h3>
+					<ul>
+						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">JavaScript Guide</a>, from the Mozilla Developers Network.</li>
+						<li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">Codecademy</a>, with interactive JavaScript lessons to help you review.</li>
+                        <li><a href="https://www.khanacademy.org/computing/cs/programming">Khan Academy</a> has a lot more information abut drawing and animations.</li>
+					</ul>
+			</section>
+
+			</div><!-- Close .slides -->
   		<footer>
         <div class="copyright">
-          Javascript ~ Girl Develop It ~
+          JavaScript for Beginners ~ Girl Develop It ~
           <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
-        </div>
+        </div><!-- Close .copyright -->
       </footer>
-		</div>
+    </div><!-- Close .reveal -->
 
 
 		<script src="reveal/lib/js/head.min.js"></script>
@@ -377,9 +303,11 @@
 				controls: true,
 				progress: true,
 				history: true,
-
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+        touch: true,
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
