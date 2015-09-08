@@ -1,6 +1,7 @@
-# CORE  JAVASCRIPT/JQUERY
+#Girl Develop It - Intro to JavaScript
+===================
 
-This is the official Girl Develop It Core Intro Javascript course. Material based on original material by Sara Chipps, Pamela Fox, Alexis Goldstein, Izzy Johnston and Leo Newball.
+This is the Girl Develop It Intro JavaScript course. Material based on original material by Sara Chipps, Pamela Fox, Alexis Goldstein, Izzy Johnston, Leo Newball, and Sylvia Richardson.
 
 The course is meant to be taught in 4 two-hour sections. Each of the slides and practice files are customizable according to the needs of a given class or audience.
 
@@ -8,23 +9,26 @@ The course is meant to be taught in 4 two-hour sections. Each of the slides and 
 
 ### Class 1
 
-Introduction to Javascript. What is it? Why does it matter?
-You will go through a history of JavaScript, what it is and how it interacts with the browser. You will go through basic JavaScript concepts including variables, data types, if/else statements and functions. Students will create a basic calculator with static numbers, incorporating variables, if/else, and lastly functions.
+Introduction to JavaScript and Basic Programming Concepts
+
+An overview of the history of JavaScript, what it is, and how it interacts with the browser. Covers basic JavaScript concepts including variables, data types, and functions.
 
 ### Class 2
-Deeper into Javascript.
+Control Flow
 
-You will go through the more complex data types such as objects and arrays. You will also introduce looping logic through while and for. You will introduce the DOM and its role in client side interaction. Students will learn how to loop through objects and arrays and display results on their site
+Introduces boolean variable, if/then statements, loops, and arrays.
 
 ### Class 3
 
-Introduction to jQuery
+Introduction to the DOM
 
-Introduce jQuery. Discuss its role as a javascript library (not a different language). You will introduce basic interactive functionalities, including mouse events, toggle, and val. Students will create a basic interactive form to add new results to their site.
+Introduces the Document Object Model (DOM) and how to use JavaScript to interact with it. Includes finding and modifying nodes.
 
 ### Class 4
 
-Introduce APIs, REST, and AJAX. Students will interact with the Meetup API (chosen because all students are already aware of Meetup and calls can be made without oAuth authentication). Bonus intros to jQuery UI, and the concept of jQuery plugins
+Events and Animations
+
+Introduces events, listening functions, user inputs, and basic animations. 
 
 
 ## Theme customization
