@@ -175,11 +175,11 @@
   var radios = document.getElementsByName('tempFormat');
 
   for (var i = 0, length = radios.length; i &lt; length; i++) {
-      if (radios[i].checked) {
-          var radioButtonValue = radios[i].value;
-          // only one radio can be checked, so stop now
-          break;
-      }
+    if (radios[i].checked) {
+      var radioButtonValue = radios[i].value;
+      // only one radio can be checked, so stop now
+      break;
+    }
   }
                   </code></pre>
               </section>
@@ -190,9 +190,9 @@
   var submitButton = document.getElementById('tempSubmitButton');
 
   submitButton.onclick = function () {
-      event.preventDefault();
-      var temperature = document.getElementById('temp').value;
-      console.log(temperature);
+    event.preventDefault();
+    var temperature = document.getElementById('temp').value;
+    console.log(temperature);
   }
   <!--line 84 has a purple { opening bracket, but line 188 has a white } closing bracket. should they be the same color?-->
                   </code></pre>
@@ -224,9 +224,9 @@
   var simpleClock = setInterval(myClock, 1000);
 
   function myClock() {
-      var d = new Date();
-      var t = d.toLocaleTimeString();
-      document.getElementById('resultsBox').innerHTML = t;
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+    document.getElementById('resultsBox').innerHTML = t;
   }
   <!--line 214 has a purple { opening bracket, but line 218 has a white closing bracket, should it also be purple?}  -->
                   </code></pre>
@@ -235,7 +235,7 @@
                   <h3>clearInterval</h3>
                   <p class="copy--small box--small">You can use <code contenteditable>clearInterval()</code> to stop a setInterval loop:</p>
                   <pre style="height: 80px; overflow: hidden;"><code contenteditable>
-  clearInterval(intervalVariable)
+  clearInterval(intervalVariable);
                   </code></pre>
                   <p class="copy--small box--small">To stop our clock:</p>
                   <pre style="height: 100px; overflow: hidden;"><code contenteditable>
@@ -282,7 +282,7 @@
                       }
                     }
 
-                    var movePic = setInterval(function(){increaseMargin()}, 10) // update every 10ms
+                    var movePic = setInterval(function(){increaseMargin()}, 10); // update every 10ms
                   }
   <!--lines 259, and 261, have purple opening { brackets, lines 266, and 268} have white closing brackets. line 267 has a purple opening bracket { and a white closing bracket }, should these all match? -->
                   </code></pre>
