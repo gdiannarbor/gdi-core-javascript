@@ -1,7 +1,7 @@
 #Girl Develop It - Intro to JavaScript
 ===================
 
-This is the Girl Develop It Intro JavaScript course. Material based on original material by Sara Chipps, Pamela Fox, Alexis Goldstein, Izzy Johnston, Leo Newball, and Sylvia Richardson.
+This is GDI Ann Arbor's Intro to Javascript course - a modification of `gdi-core-javascript`. Based on original material by Sara Chipps, Pamela Fox, Alexis Goldstein, Izzy Johnston and Leo Newball, and Sylvia Richardson.
 
 The course is meant to be taught in 4 two-hour sections. Each of the slides and practice files are customizable according to the needs of a given class or audience.
 
@@ -28,7 +28,7 @@ Introduces the Document Object Model (DOM) and how to use JavaScript to interact
 
 Events and Animations
 
-Introduces events, listening functions, user inputs, and basic animations. 
+Introduces events, listening functions, user inputs, and basic animations.
 
 
 ## Theme customization
