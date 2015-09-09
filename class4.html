@@ -84,7 +84,7 @@
                   </code></pre>
                   <pre style="height: 160px; overflow: hidden;"><code contenteditable>
   function sayHi() {
-      alert ('Hi!');
+    alert('Hi!');
   }
                   </code></pre>
               </section>
@@ -96,8 +96,8 @@
                   </code></pre>
                   <p class="copy--small box--small">Then add an event to that object:</p>
                   <pre style="height: 160px; overflow: hidden;"><code contenteditable>
-  myTarget.onclick=function(){
-       alert ('Hi!');
+  myTarget.onclick = function(){
+    alert('Hi!');
   }
                   </code></pre>
               </section>
@@ -124,7 +124,7 @@
               <section>
                   <h3>This</h3>
                   <p class="copy--small box--small">The keyword <code contenteditable>this</code> references the element that the user has just interacted with:</p>
-                  <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+                  <pre style="height: 200px; overflow: hidden;"><code contenteditable>
   element.onmouseover = function (event) {
     console.log(this);
   };
@@ -138,7 +138,7 @@
               <section>
                   <h3>Let's Develop It</h3>
                   <p class="copy--small box--small">Write code that targets this link:</p>
-                  <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+                  <pre style="height: 80px; overflow: hidden;"><code contenteditable>
   &lt;a href="http://girldevelopit.com/" id="gdiLink"&gt;Girl Develop It&lt;/a&gt;
                   </code></pre>
                   <p class="copy--small box--small">When a user clicks the link, the page should display an error message instead of going to the Girl Develop It homepage.</p>
@@ -149,12 +149,13 @@
               <section>
                   <h3>Forms</h3>
                   <p class="copy--small box--small">You can collect information from users to use in functions. The most common method is an HTML form:</p>
-                  <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+                  <pre style="height: 200px; overflow: hidden;"><code contenteditable>
   &lt;form id="temperatureForm"&gt;
-      &lt;label for="temp"&gt;Temperature:&lt;/label&gt; &lt;input type="text" id="temp" size="3"/&gt; degrees in
+      &lt;label for="temp"&gt;Temperature:&lt;/label&gt;
+      &lt;input type="text" id="temp" size="3"/&gt; degrees in
       &lt;input type="radio" name="tempFormat" value="F" checked /&gt;Fahrenheit
       &lt;input type="radio" name="tempFormat" value="C" /&gt;Celsius &lt;br /&gt;
-      &lt;label for="submitButton"&gt;&lt;/label&gt; &lt;input id="tempSubmitButton" type="submit" value="Submit" /&gt;
+      &lt;input type="submit" id="tempSubmitButton" value="Submit" /&gt;
   &lt;/form&gt;
                   </code></pre>
               </section>
@@ -163,14 +164,14 @@
                   <p class="copy--small box--small">You retrieve the values of form elements using the <code contenteditable>value</code> method:</p>
                   <pre style="height: 160px; overflow: hidden;"><code contenteditable>
   var temperature = document.getElementById('temp').value;
-  console.log (temperature);
+  console.log(temperature);
                   </code></pre>
-                  <p class="copy--small box--small">You can retrieve the value of a form at any time. Try <code contenteditable>onblur</code> (when a form element loses focus).</p>
+                  <p class="copy--small box--small">You can retrieve the value of a form at any time.<br/>Try <code contenteditable>onblur</code> (when a form element loses focus).</p>
               </section>
               <section>
                   <h3>Radio Buttons</h3>
-                  <p class="copy--small box--small">Radio buttons usually do not have IDs, so you will need to use an array:</p>
-                  <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+                  <p class="copy--small box--small">Radio buttons usually do not have IDs,<br/>so you will need to use an array:</p>
+                  <pre style="height: 240px; overflow: hidden;"><code contenteditable>
   var radios = document.getElementsByName('tempFormat');
 
   for (var i = 0, length = radios.length; i &lt; length; i++) {
@@ -185,27 +186,29 @@
                <section>
                   <h3>Submit buttons</h3>
                   <p class="copy--small box--small">If you are going to retrieve form values with the submit button, be sure to prevent the default action!</p>
-                  <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+                  <pre style="height: 200px; overflow: hidden;"><code contenteditable>
   var submitButton = document.getElementById('tempSubmitButton');
+
   submitButton.onclick = function () {
       event.preventDefault();
       var temperature = document.getElementById('temp').value;
-      console.log (temperature);
+      console.log(temperature);
   }
   <!--line 84 has a purple { opening bracket, but line 188 has a white } closing bracket. should they be the same color?-->
                   </code></pre>
               </section>
               <section>
                   <h3>Let's Develop It</h3>
-                  <p class="copy--small box--small">Collect a value from the input box on the page. Use it inside a function of some kind. For example, collect a number and multiply it by five or collect a name and display a greeting.</p>
+                  <p class="copy--small box--small">Collect a value from the input box on the page.</p>
+                  <p class="copy--small box--small">Use it inside a function of some kind. For example, collect a number and multiply it by five or collect a name and display a greeting.</p>
               </section>
         </section>
 
         <section>
               <section>
                   <h3>Timing Events</h3>
-                  <p class="copy--small box--small">In JavaScript, it is possible to execute some code at specified time intervals.</p>
-                  <ul class="copy--small box--small list--tall">
+                  <p class="copy--small box--small">In JavaScript, it is possible to execute some code<br/>at specified time intervals.</p>
+                  <ul class="copy--xsmall box--small list--tall">
                       <li><code contenteditable>setInterval()</code> executes a function over and over again, at specified time intervals</li>
                       <li><code contenteditable>setTimeout()</code>  executes a function, once, after waiting a specified number of milliseconds</li>
                   </ul>
@@ -213,12 +216,13 @@
               <section>
                   <h3>setInterval</h3>
                   <p class="copy--small box--small">The syntax for <code contenteditable>setInterval()</code> is:</p>
-                  <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+                  <pre style="height: 80px; overflow: hidden;"><code contenteditable>
   setInterval(function, milliseconds);
                   </code></pre>
                   <p class="copy--small box--small">For example, this is a simple clock:</p>
-                  <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+                  <pre style="height: 200px; overflow: hidden;"><code contenteditable>
   var simpleClock = setInterval(myClock, 1000);
+
   function myClock() {
       var d = new Date();
       var t = d.toLocaleTimeString();
@@ -230,13 +234,13 @@
               <section>
                   <h3>clearInterval</h3>
                   <p class="copy--small box--small">You can use <code contenteditable>clearInterval()</code> to stop a setInterval loop:</p>
-                  <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+                  <pre style="height: 80px; overflow: hidden;"><code contenteditable>
   clearInterval(intervalVariable)
                   </code></pre>
                   <p class="copy--small box--small">To stop our clock:</p>
-                  <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+                  <pre style="height: 100px; overflow: hidden;"><code contenteditable>
   function myStopFunction() {
-      clearInterval(simpleClock);
+    clearInterval(simpleClock);
   }
   <!--line 230 has a purple opening bracket { but line 232 has a white } closing bracket, should they be the same color?  -->
                   </code></pre>
@@ -244,36 +248,42 @@
               <section>
                   <h3>setTimeout</h3>
                   <p class="copy--small box--small">The method <code contenteditable>setTimeout()</code> is similar, but it will only run once:</p>
-                  <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+                  <pre style="height: 80px; overflow: hidden;"><code contenteditable>
   setTimeout(function, milliseconds);
                   </code></pre>
                   <p class="copy--small box--small">For example, this code will wait 3 seconds, then create a popup box, unless the user triggers the <code contenteditable>clearTimeout():</code></p>
-                  <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+                  <pre style="height: 220px; overflow: hidden;"><code contenteditable>
   var helloBox;
+
   function sayHello() {
-      helloBox = setTimeout(function(){alert('Hello')},3000);
+    helloBox = setTimeout(function(){alert('Hello')},3000);
   }
+
   function dontSayIt() {
-      clearTimeout(helloBox);
+    clearTimeout(helloBox);
   }
   <!--line 245 and line 248 have purple opening brackets, but lines 247 and 250 have white closing brackets, should they all be the same colors?  -->
                   </code></pre>
               </section>
               <section>
                   <h3>Animations</h3>
-                  <p class="copy--small box--small">By changing values slowly over time, we can create simple animations:</p>
-                  <pre style="height: 160px; overflow: hidden;"><code contenteditable>
-  var targetPic = document.getElementById('turtlePic');
-  targetPic.onclick = function () {
-      var leftMarginValue = 0;
-      function increaseMargin() {
-          leftMarginValue++  // update parameter each time
-          targetPic.style.marginLeft = leftMarginValue + 'px' //set left margin
-          if (leftMarginValue === 200)  // check finish condition {
-              clearInterval(movePic);
-          }
-      var movePic = setInterval(function(){increaseMargin()}, 10) // update every 10ms
-  }
+                  <p class="copy--small box--small">By changing values slowly over time,<br/>we can create simple animations:</p>
+                  <pre><code contenteditable>
+                  var targetPic = document.getElementById('turtlePic');
+
+                  targetPic.onclick = function () {
+                    var leftMarginValue = 0;
+
+                    function increaseMargin() {
+                      leftMarginValue++;  // update parameter each time
+                      targetPic.style.marginLeft = leftMarginValue + 'px'; //set left margin
+                      if (leftMarginValue === 200) { // check finish condition
+                          clearInterval(movePic);
+                      }
+                    }
+
+                    var movePic = setInterval(function(){increaseMargin()}, 10) // update every 10ms
+                  }
   <!--lines 259, and 261, have purple opening { brackets, lines 266, and 268} have white closing brackets. line 267 has a purple opening bracket { and a white closing bracket }, should these all match? -->
                   </code></pre>
               </section>
@@ -297,7 +307,7 @@
             <img src="images/gdi_logo_badge.png" class="img--bare" height="450px" />
             <div class="box--small">
               <h3><span class="green">Intro to JavaScript</span></h3>
-              <h4><span class="blue">Class 4</span></h4>
+              <h4><span class="blue">Thank you for joining us!</span></h4>
             </div>
           </section>
         </section>
