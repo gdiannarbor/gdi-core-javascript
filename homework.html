@@ -40,7 +40,7 @@
 
             <button onclick="showSolution(1)">Show/Hide Solution</button>
             <div class="codebox" id="example1Code">
-                <pre><code>
+                <pre><code contenteditable>
 var numKids  = 5;
 var partner  = 'David Beckham';
 var location = 'Costa Rica';
@@ -54,10 +54,10 @@ console.log(future);
 
             <h3>The Calculator</h3>
             <ul>
-                 <li>Write a function called <code>squareNumber</code> that will take one argument (a number), square that number, and return the result. It should also log a string like "The result of squaring the number 3 is 9." </li>
-                 <li>Write a function called <code>halfNumber</code> that will take one argument (a number), divide it by 2, and return the result. It should also log a string like "Half of  5 is 2.5.".</li>
-                 <li>Write a function called <code>percentOf</code> that will take two numbers, figure out what percent the first number represents of the second number, and return the result. It should also log a string like "2 is 50% of 4."</li>
-                 <li>Write a function called <code>areaOfCircle</code> that will take one argument (the radius), calculate the area based on that, and return the result. It should also log a string like "The area for a circle with radius 2 is 12.566370614359172."
+                 <li>Write a function called <code contenteditable>squareNumber</code> that will take one argument (a number), square that number, and return the result. It should also log a string like "The result of squaring the number 3 is 9." </li>
+                 <li>Write a function called <code contenteditable>halfNumber</code> that will take one argument (a number), divide it by 2, and return the result. It should also log a string like "Half of  5 is 2.5.".</li>
+                 <li>Write a function called <code contenteditable>percentOf</code> that will take two numbers, figure out what percent the first number represents of the second number, and return the result. It should also log a string like "2 is 50% of 4."</li>
+                 <li>Write a function called <code contenteditable>areaOfCircle</code> that will take one argument (the radius), calculate the area based on that, and return the result. It should also log a string like "The area for a circle with radius 2 is 12.566370614359172."
                     <ul><li>Bonus: Round the result so there are only two digits after the decimal.</li></ul>
                  </li>
                  <li>Write a function that will take one argument (a number) and perform the following operations, using the functions
@@ -73,7 +73,7 @@ console.log(future);
 
             <button onclick="showSolution(2)">Show/Hide Solution</button>
             <div class="codebox" id="example2Code">
-                <pre><code>
+                <pre><code contenteditable>
 function squareNumber(num) {
     var squaredNumber = num * num;
     console.log('The result of squaring the number ' + num + ' is ' + squaredNumber);
@@ -123,7 +123,7 @@ doCrazyStuff(5);
             <p>These questions are not as straightforward as the others. They challenge you to really think like a programmer. Really try to solve them before you peek at the answer.</p>
 
             <h4>MixUp</h4>
-            <p>Create a function called <code>mixUp</code>. It should take in two strings, and return the concatenation of the two strings (separated by a space) slicing out and swapping the first 2 characters of each. You can assume that the strings are at least 2 characters long. For example:</p>
+            <p>Create a function called <code contenteditable>mixUp</code>. It should take in two strings, and return the concatenation of the two strings (separated by a space) slicing out and swapping the first 2 characters of each. You can assume that the strings are at least 2 characters long. For example:</p>
             <pre>
 mixUp('mix', pod'): 'pox mid'
 mixUp('dog', 'dinner'): 'dig donner'
@@ -131,7 +131,7 @@ mixUp('dog', 'dinner'): 'dig donner'
 
             <button onclick="showSolution(3)">Show/Hide Solution</button>
             <div class="codebox" id="example3Code">
-                <pre><code>
+                <pre><code contenteditable>
 //This function uses the slice() method. It extracts a part of a string and returns a new string
 function mixUp(string1, string2) {
   return string1.slice(0, 2) + string2.slice(2) + " " + string2.slice(0, 2) + string1.slice(2);
@@ -140,7 +140,7 @@ function mixUp(string1, string2) {
             </div>
 
             <h4>FixStart</h4>
-            <p>Create a function called <code>fixStart</code>. It should take a single argument, a string, and return a version where all occurrences of its first character have been replaced with '*', except for the first character itself. You can assume that the string is at least one character long. For example:</p>
+            <p>Create a function called <code contenteditable>fixStart</code>. It should take a single argument, a string, and return a version where all occurrences of its first character have been replaced with '*', except for the first character itself. You can assume that the string is at least one character long. For example:</p>
             <pre>
 fixStart('babble'): 'ba**le'
 fixStart('turtle'): 'tur*le'
@@ -148,7 +148,7 @@ fixStart('turtle'): 'tur*le'
 
             <button onclick="showSolution(4)">Show/Hide Solution</button>
             <div class="codebox" id="example4Code">
-                <pre><code>
+                <pre><code contenteditable>
 //This function uses a few new methods and regular expressions
 function fixStart(inputString) {
   var firstChar = inputString.charAt(0);
@@ -166,7 +166,7 @@ function fixStart(inputString) {
 
             <button onclick="showSolution(5)">Show/Hide Solution</button>
             <div class="codebox" id="example5Code">
-                <pre><code>
+                <pre><code contenteditable>
 function greaterNum(num1, num2) {
     if (num1 === num2) {
         console.log ('Those numbers are equal');
@@ -189,7 +189,7 @@ console.log (greaterNum(5, 'dog'));
             </div>
 
             <h3>Pluralize</h3>
-            <p>Write a function <code>pluralize</code> that takes in two arguments, a number and a word, and returns the plural. For example:</p>
+            <p>Write a function <code contenteditable>pluralize</code> that takes in two arguments, a number and a word, and returns the plural. For example:</p>
             <pre>
 pluralize(5, 'cat'): '5 cats'
 pluralize(7, 'turtle'): '7 cats'
@@ -199,7 +199,7 @@ pluralize(7, 'turtle'): '7 cats'
 
             <button onclick="showSolution(6)">Show/Hide Solution</button>
             <div class="codebox" id="example6Code">
-                <pre><code>
+                <pre><code contenteditable>
 function pluralize(number, noun) {
     if (number != 1 &amp;&amp; noun != 'sheep' &amp;&amp; noun != 'geese') {
         return number + ' ' + noun + 's';
@@ -219,7 +219,7 @@ console.log('I have ' + pluralize(3, 'geese'));
 
             <button onclick="showSolution(7)">Show/Hide Solution</button>
             <div class="codebox" id="example7Code">
-                <pre><code>
+                <pre><code contenteditable>
 for (var i = 0; i &lt;= 20; i++) {
     if (i % 2 === 0) {
         console.log(i + ' is even');
@@ -235,7 +235,7 @@ for (var i = 0; i &lt;= 20; i++) {
 
             <button onclick="showSolution(8)">Show/Hide Solution</button>
             <div class="codebox" id="example8Code">
-                <pre><code>
+                <pre><code contenteditable>
 var choices = ['red', 'orange', 'pink', 'yellow'];
 for (var i = 0; i &lt; choices.length; i++) {
     console.log('My #' + (i + 1) + ' choice is ' + choices[i]);
@@ -270,7 +270,7 @@ for (var i = 0; i &lt; choices.length; i++) {
 
             <button onclick="showSolution(9)">Show/Hide Solution</button>
             <div class="codebox" id="example9Code">
-                <pre><code>
+                <pre><code contenteditable>
 var books = [
   {title: 'The Design of EveryDay Things',
    author: 'Don Norman',
@@ -305,7 +305,7 @@ for (var i = 0; i &lt; books.length; i++) {
 
             <button onclick="showSolution(10)">Show/Hide Solution</button>
             <div class="codebox" id="example10Code">
-                <pre><code>
+                <pre><code contenteditable>
 var img = document.getElementById('hplogo');
 img.width = 400;
 img.src = 'http://www.logostage.com/logos/yahoo.GIF';
@@ -316,18 +316,18 @@ button.innerHTML = 'Yahoooo!';
 
             <h3>The Reading List Part II</h3>
             <ul>
-              <li>Create a webpage with an <code>h1</code> of "My Book List".</li>
+              <li>Create a webpage with an <code contenteditable>h1</code> of "My Book List".</li>
               <li>Add a script tag to the bottom of the page, where all your JS will go.</li>
               <li>Copy the array of books from the previous exercise.</li>
-              <li>Iterate through the array of books. For each book, create a <code>p</code> element with the book title and author and append it to the page.</li>
-              <li><strong>Bonus</strong>: Use a <code>ul</code> and <code>li</code> to display the books.</li>
-              <li><strong>Bonus</strong>: add a property to each book with the URL of the book cover, and add an <code>img</code> element for each book on the page.</li>
+              <li>Iterate through the array of books. For each book, create a <code contenteditable>p</code> element with the book title and author and append it to the page.</li>
+              <li><strong>Bonus</strong>: Use a <code contenteditable>ul</code> and <code contenteditable>li</code> to display the books.</li>
+              <li><strong>Bonus</strong>: add a property to each book with the URL of the book cover, and add an <code contenteditable>img</code> element for each book on the page.</li>
               <li><strong>Bonus</strong>: Change the style of the book depending on whether you have read it or not.</li>
             </ul>
 
             <button onclick="showSolution(11)">Show/Hide Solution</button>
             <div class="codebox" id="example11Code">
-                <pre><code>
+                <pre><code contenteditable>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
  &lt;head&gt;
@@ -397,7 +397,7 @@ countTags('p'): 'There are 3 tags of type p on the page'
 
             <button onclick="showSolution(12)">Show/Hide Solution</button>
             <div class="codebox" id="example12Code">
-                <pre><code>
+                <pre><code contenteditable>
 function countTags (tagType) {
     var tagArray = document.getElementsByTagName(tagType);
     console.log ('There are ' + tagArray.length + ' tags of type ' + tagType + ' on the page.');
