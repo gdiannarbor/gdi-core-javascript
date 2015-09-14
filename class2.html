@@ -37,417 +37,679 @@
               <h4><span class="blue">Part 2</span></h4>
           </section>
 
-
           <section>
             <h3>Review</h3>
-            <p class="copy--small box--small">In this code, spot the comments, variables, operator, function, argument, and return value.</p>
-            <pre><code contenteditable>
-  function calculateTip(total) {
-    var tipPercent = 0.15; //Can be changed
-    return (total * tipPercent);
+            <ul class="copy--small box--small list--tall">
+              <li>Variable Scope</li>
+              <li>if / else if / else</li>
+              <li>Logical Operators (<code>&amp;&amp;</code>, <code>||</code>, <code>!</code>)</li>
+              <li>While Loops, For Loops, and Break</li>
+              <li>Array</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+              <section>
+          <h3>Objects</h3>
+          <p class="copy--small box--small">Objects let us store a collection of properties.</p>
+                <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+  var objectName = {
+    propertyName: propertyValue,
+    propertyName: propertyValue,
+    // ...
+  };
+          </code></pre>
+                <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+  var aboutMe = {
+    hometown: 'Ann Arbor, MI',
+    hair: 'Auburn',
+    likes: ['kittens', 'code'],
+    birthday: {month: 10, day: 17}
+  };
+          </code></pre>
+        </section>
+              <section>
+          <h3>Accessing Objects</h3>
+          <p class="copy--small box--small">You can retrieve values using "dot notation"</p>
+                <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+  var aboutMe = {
+    hometown: 'Ann Arbor, MI',
+    hair: 'Auburn'
+  };
+  var myHometown = aboutMe.hometown;
+          </code></pre>
+                <p class="copy--small box--small">Or using "bracket notation"</p>
+                <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+  var myHair = aboutMe['hair'];
+          </code></pre>
+        </section>
+              <section>
+          <h3>Changing Objects</h3>
+          <p class="copy--small box--small">You can use dot or bracket notation to change properties</p>
+                <pre style="height: 160px; overflow: hidden;"><code contenteditable class="javascript">
+  var aboutMe = {
+    hometown: 'Ann Arbor, MI',
+    hair: 'Auburn'
+  };
+  aboutMe.hair = 'blue';
+          </code></pre>
+                <p class="copy--small box--small">Add new properties</p>
+                <pre style="height: 80px; overflow: hidden;"><code contenteditable class="javascript">
+  aboutMe.gender = 'female';
+          </code></pre>
+                <p class="copy--small box--small">Or delete them</p>
+                <pre style="height: 80px; overflow: hidden;"><code contenteditable class="javascript">
+  delete aboutMe.gender;
+          </code></pre>
+        </section>
+              <section>
+          <h3>Arrays of Objects</h3>
+          <p class="copy--small box--small">Since arrays can hold any data type, they can also hold objects</p>
+                <pre style="height: 260px; overflow: hidden;"><code contenteditable>
+  var myCats = [
+    { name: 'Lizzie', age: 18 },
+    { name: 'Daemon', age: 1 }
+  ];
+
+  for (var i = 0; i &lt; myCats.length; i++) {
+    var myCat = myCats[i];
+    console.log(myCat.name + ' is ' + myCat.age + ' years old.');
+  }
+          </code></pre>
+        </section>
+              <section>
+          <h3>Arrays of Objects</h3>
+          <p class="copy--small box--small">Just like other data types, objects can be passed into functions:</p>
+                <pre style=""><code contenteditable>
+  var lizzieTheCat = {
+    age: 18,
+    furColor: 'grey',
+    likes: ['catnip', 'milk'],
+    birthday: { month: 7, day: 17, year: 1996 }
   }
 
-  var billPreTip = 10;
-  var billTip = calculateTip(billPreTip);
-  var receipt = 'Meal: ' + billPreTip + ' Tip: ' + billTip +
-    ' Total: ' + (billPreTip + billTip);
-  console.log(receipt);
+  function describeCat(cat) {
+    console.log('This cat is ' + cat.age + ' years old with '
+      + cat.furColor + ' fur.');
+  }
+
+  describeCat(lizzieTheCat);
+          </code></pre>
+        </section>
+              <section>
+          <h3>Let's Develop It</h3>
+                  <p class="copy--small box--small">Create an object to hold information on your favorite recipe.</p>
+                  <p class="copy--small box--small">It should have properties for <code>recipeTitle</code> (a string), <code>servings</code> (a number), and <code>ingredients</code> (an array of strings).</p>
+                  <p class="copy--small box--small">Try displaying some information about your recipe.</p>
+                  <p class="copy--small box--small">Bonus: Create a loop to list all the ingredients.</p>
+        </section>
+      </section>
+
+      <section>
+              <section>
+                <h3>Object methods</h3>
+          <p class="copy--small box--small">Objects can also hold functions.</p>
+                <pre style="height: 250px; overflow: hidden;"><code contenteditable>
+  var lizzieTheCat = {
+    age: 18,
+    furColor: 'grey',
+    meow: function() {
+      console.log('meowww');
+    },
+    eat: function(food) {
+      console.log('Yum, I love ' + food);
+    },
+  };
+          </code></pre>
+                <p class="copy--small box--small">Call object methods using dot notation.</p>
+                <pre style="height: 80px; overflow: hidden;"><code contenteditable>
+  lizzieTheCat.meow();
+  lizzieTheCat.eat('brown mushy stuff');
+          </code></pre>
+              </section>
+              <section>
+                <h3>Built-in methods</h3>
+                <p class="copy--small box--small">JS provides several built-in objects:</p>
+                <ul class="copy--small box--small list--tall">
+                    <li><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array">Array</a></li>
+                    <li><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></li>
+                    <li><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number">Number</a></li>
+                    <li><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String">String</a></li>
+                    <li><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/RegExp">RegExp</a></li>
+                    <li><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date">Date</a></li>
+                    <li><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math">Math</a></li>
+                </ul>
+              </section>
+      </section>
+
+      <section>
+        <section>
+          <h3>Review: Anatomy of a website</h3>
+          <div class="box"><div class = "blue"> Your Content</div>
+                    <div><span class = "blue">+ HTML: </span>Structure</div>
+                    <div><span class = "blue">+ CSS: </span>Presentation</div>
+                    <div class = "blue">= Your Website</div></div>
+          <p class="copy--small box--small">A website is a way to present your content to the world, using HTML to structure the content &amp; CSS to make it look good.</p>
+        </section>
+
+              <section>
+        <h3>IDs vs. Classes</h3>
+          <div class = "left-align box copy--small">
+            <span class = "yellow">ID</span> -- Should only apply to one element on a webpage. For instance, a webpage only has one footer.
+            <p class="copy--small box--small">The <code>#</code> is how you tell CSS "this is an id."</p>
+          </div>
+          <div class = "left-align copy--small">
+            <span class = "yellow">Class</span> -- Lots of elements can have the same class. For instance, there can be many warnings on one webpage.
+            <p class="copy--small box--small">The <code>.</code> is how you tell CSS "this is a class name."</p>
+          </div>
+        </section>
+
+
+              <section>
+                <h3>The DOM Tree</h3>
+                <p class="copy--small box--small">We model the nested structure of an HTML page with<br/>the DOM (Document Object Model) Tree.</p>
+                <p class="copy--small box--small">This is the browser's "map" of all the elements on a page.</p>
+              </section>
+              <section>
+                <h3>The DOM: Sample Code</h3>
+                  <pre ><code contenteditable>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+      &lt;head&gt;
+          &lt;title&gt;Test Page&lt;/title&gt;
+          &lt;style&gt;
+              h1 {
+               color: red;
+              }
+          &lt;/style&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;h1&gt;My Page&lt;/h1&gt;
+          &lt;p&gt;Hello World!&lt;/p&gt;
+          &lt;img src="http://placekitten.com/200/300" alt="cat"/&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+          </code></pre>
+              </section>
+              <section>
+                <h3>The DOM: Sample Model</h3>
+                <img src="images/dom-tree.png" alt="Simple DOM Tree"/>
+              </section>
+        </section>
+
+        <!--Accessing the DOM-->
+        <section>
+            <section>
+              <h3>DOM Access</h3>
+              <p class="copy--small box--small">Your browser automatically builds a<br/>Document Object to store the DOM of a page.</p>
+              <p class="copy--small box--small">To change a page:</p>
+              <ol class="copy--small box--small list--tall">
+                <li>Find the DOM <i>"node"</i> and store it in a variable</li>
+                <li>Use methods to manipulate the node</li>
+              </ol>
+            </section>
+            <section>
+              <h3>DOM Access: By Id</h3>
+              <p class="copy--small box--small">You can find nodes by id using the method:</p>
+              <pre style="height: 80px; overflow: hidden;"><code contenteditable>
+document.getElementById(id);
         </code></pre>
-          </section>
-        </section>
-
-        <section>
-          <section>
-              <h3>Variable Scope</h3>
-              <p class="copy--small box--small">The scope of a variable is how long the computer will remember it.</p>
-          </section>
-          <section>
-              <h3>Global Scope</h3>
-              <p class="copy--small box--small">A variable declared outside a function has a <span class="yellow">global</span> scope and can be accessed anywhere, even in a function.</p>
-                <pre><code contenteditable>
-  var awesomeGroup = 'Girl Develop It'; //Global scope
-
-  function whatIsAwesome() {
-    console.log(awesomeGroup + ' is pretty awesome.'); //Will work
-  }
-
-  whatIsAwesome();
-
+              <p class="copy--small box--small">To find:</p>
+              <pre style="height: 80px; overflow: hidden;"><code contenteditable>
+&lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/&gt;
         </code></pre>
-          </section>
-
-          <section>
-              <h3>Local Scope</h3>
-              <p class="copy--small box--small">A variable declared within a function has a <span class="yellow">local</span> scope and can only be accessed within that function.</p>
-              <pre><code contenteditable>
-  function whatIsAwesome() {
-    var awesomeGroup = 'Girl Develop It'; //Local scope
-    console.log('I made a variable called awesomeGroup with a value of ' + awesomeGroup); //Will work
-  }
-  <!--on the slide, line 84 has a purple { and it's closing bracket } on line 87 is white. do they need to be the same color?-->
-  whatIsAwesome();
-
-  console.log(awesomeGroup + ' is pretty awesome.'); //Won't work
+              <p class="copy--small box--small">We would use:</p>
+              <pre style="height: 80px; overflow: hidden;"><code contenteditable>
+var imgKitten = document.getElementById('kittenPic');
         </code></pre>
+            </section>
+            <section>
+              <h3>DOM Access: By Tag Name</h3>
+              <p class="copy--small box--small">You can find certain types of HTML elements using this method:</p>
+              <pre style="height: 80px; overflow: hidden;"><code contenteditable>
+document.getElementsByTagName(tagName);
+        </code></pre>
+              <p class="copy--small box--small">To find:</p>
+              <pre style="height: 80px; overflow: hidden;"><code contenteditable>
+&lt;li&gt;Daisy&lt;/li&gt;
+&lt;li&gt;Tulip&lt;/li&gt;
+        </code></pre>
+              <p class="copy--small box--small">We would use:</p>
+              <pre style="height: 120px; overflow: hidden;"><code contenteditable>
+var listItems = document.getElementsByTagName('li');
+for (var i = 0; i &lt; listItems.length; i++) {
+  var listItem = listItems[i];
+}
+        </code></pre>
+            </section>
+            <section>
+              <h3>DOM Access: HTML 5</h3>
+              <p class="copy--small box--small">In <i>modern</i> browsers, you can use other methods too.</p>
+              <p class="copy--small box--small">Available in <a href="http://caniuse.com/#search=getElementsByClassName">IE9+, FF3.6+, Chrome 17+, Safari 5+</a>:</p>
+              <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+document.getElementsByClassName(className);
+        </code></pre>
+              <p class="copy--small box--small">Available in <a href="http://caniuse.com/#search=querySelectorAll">IE8+, FF3.6+, Chrome 17+, Safari 5+</a>:</p>
+              <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+document.querySelector(cssQuery);
+document.querySelectorAll(cssQuery);
+        </code></pre>
+            </section>
+            <section>
+              <h3>getElement vs. getElements</h3>
+              <p class="copy--small box--small">Any methods that starts with "getElement"<br/>will return a <span class = "blue">single</span> node.</p>
+              <pre style="height: 80px; overflow: hidden;"><code contenteditable>
+document.getElementById('uniqueID'); //returns a single node
+        </code></pre>
+              <p class="copy--small box--small">Any method that starts with "getElements"<br/>will return a <span class = "blue">array</span> of nodes.</p>
+              <p class="copy--small box--small">To modify a single node, you will need to use bracket notation to select the correct one.</p>
+              <pre style="height: 100px; overflow: hidden;"><code contenteditable>
+document.getElementsByTagName('p'); //returns multiple nodes
+var specficParagraph = document.getElementsByTagName('p')[2];
+        </code></pre>
+            </section>
+            <section>
+              <h3>DOM Nodes: Attributes</h3>
+              <p class="copy--small box--small">You can access and change attributes<br/>of DOM nodes using dot notation.</p>
+              <p class="copy--small box--small">To change this element:</p>
+              <pre style="height: 80px; overflow: hidden;"><code contenteditable>
+&lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/&gt;
+        </code></pre>
+              <p class="copy--small box--small">We could change the src attribute this way:</p>
+              <pre style="height: 100px; overflow: hidden;"><code contenteditable>
+var imgKitten = document.getElementById('kittenPic');
+var oldSrc = imgKitten.src;
+imgKitten.src = 'http://placekitten.com/100/500';
+        </code></pre>
+            </section>
+            <section>
+              <h3>DOM Nodes: Getting and Setting Attributes</h3>
+              <p class="copy--small box--small">You can also use <code contenteditable>getAttribute/setAttribute:</code></p>
+              <pre style="height: 80px; overflow: hidden;"><code contenteditable>
+&lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/&gt;
+        </code></pre>
+              <p class="copy--small box--small">We could change the src attribute this way:</p>
+              <pre style="height: 100px; overflow: hidden;"><code contenteditable>
+var imgKitten = document.getElementById('kittenPic');
+var oldSrc = imgKitten.getAttribute('src');
+imgKitten.setAttribute('src', 'http://placekitten.com/100/500');
+        </code></pre>
+            </section>
+            <section>
+              <h3>DOM Nodes: Styles</h3>
+              <p class="copy--small box--small">You can change page CSS using <code contenteditable>style</code></p>
+              <p class="copy--small box--small">To apply these CSS styles:</p>
+              <pre style="height: 100px; overflow: hidden;"><code contenteditable>
+body {
+  color: red;
+}
+        </code></pre>
+              <p class="copy--small box--small">You could use this JavaScript:</p>
+              <pre style="height: 100px; overflow: hidden;"><code contenteditable>
+var pageNode = document.getElementsByTagName('body')[0];
+pageNode.style.color = 'red';
+        </code></pre>
+            </section>
+            <section>
+              <h3>DOM Nodes: More Styles</h3>
+              <p class="copy--small box--small">Reference CSS properties named with a <code>-</code> via <i>"camelCase"</i>.</p>
+              <p class="copy--small box--small">Be sure to include a unit on any number</p>
+              <p class="copy--small box--small">To apply these CSS styles:</p>
+              <pre style="height: 120px; overflow: hidden;"><code contenteditable>
+body {
+  background-color: pink;
+  padding-top: 10px;
+}
+        </code></pre>
+              <p class="copy--small box--small">You could use this JavaScript:</p>
+              <pre style="height: 100px; overflow: hidden;"><code contenteditable>
+var pageNode = document.getElementsByTagName('body')[0]
+pageNode.style.backgroundColor = 'pink';
+pageNode.style.paddingTop = '10px';
+        </code></pre>
+            </section>
+            <section>
+        <h3>Let's Develop It</h3>
+                <p class="copy--small box--small">Create a simple HTML page or <a href="files/class3.zip">use this sample code.</a></p>
+                <p class="copy--small box--small">Isolate a node (an element on the page)<br/>and change an attribute or add a new style.</p>
+      </section>
           </section>
 
           <section>
-              <h3>Boolean Variables</h3>
-              <p class="copy--small box--small">Boolean variables represent the logical values True and False</p>
-              <pre><code contenteditable>
-  var catsAreBest = true;
-  var dogsRule = false;
-      </code></pre>
-              <p class="copy--small box--small">If you try to use another variable as a boolean, JavaScript will guess.<br/>The number <code contenteditable>0</code>, the empty string <code contenteditable>''</code>, <code contenteditable>undefined</code>, and <code contenteditable>null</code> are considered false, everything else reads as true.</p>
-          </section>
 
-          <section>
-              <h3>The if statement</h3>
-              <p class="copy--small box--small">Use if to decide which lines of code to execute, based on a condition.</p>
-              <pre style="height: 140px; overflow: hidden;"><code contenteditable>
-  if (condition) {
-    // statements to execute
+            <section>
+              <h3>DOM innerHTML</h3>
+              <p class="copy--small box--small">Each DOM node has an <code contenteditable>innerHTML</code> property containing the HTML of all its children. You can use this property to view or change the HTML of a node.</p>
+              <p class="copy--small box--small">For example, you can overwrite the entire body:</p>
+              <pre style="height: 120px; overflow: hidden;"><code contenteditable class="javascript">
+var pageNode = document.getElementsByTagName('body')[0];
+pageNode.innerHTML = '&lt;h1&gt;Oh Noes!&lt;/h1&gt; &lt;p&gt;I just changed the whole page!&lt;/p&gt;'
+        </code></pre>
+              <p class="copy--small box--small">Or just add some new content to the end:</p>
+              <pre style="height: 120px; overflow: hidden;"><code contenteditable class="javascript">
+pageNode.innerHTML += '...just adding this bit at the end of the page.';
+        </code></pre>
+            </section>
+            <section>
+              <h3>DOM innerHTML continued</h3>
+              <p class="copy--small box--small">You can also target a particular element</p>
+              <p class="copy--small box--small">To fill this HTML element:</p>
+              <pre style="height: 120px; overflow: hidden;"><code contenteditable>
+&lt;p id="warning"&gt;&lt;/p&gt;
+        </code></pre>
+              <p class="copy--small box--small">We can select the node and modify it:</p>
+              <pre style="height: 120px; overflow: hidden;"><code contenteditable>
+var warningParagraph = document.getElementById('warning');
+warningParagraph.innerHTML = 'Danger Will Robinson!';
+        </code></pre>
+            </section>
+            <section>
+              <h3>Creating New Nodes</h3>
+              <p class="copy--small box--small">The <code contenteditable>document</code> object also provides<br/>ways to create nodes from scratch:</p>
+              <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+document.createElement(tagName);
+document.createTextNode(text);
+document.appendChild();
+        </code></pre>
+            </section>
+            <section>
+              <h4>Creating New Nodes: Sample Code</h4>
+              <pre style="height: 300px; overflow: hidden;"><code contenteditable>
+var pageNode = document.getElementsByTagName('body')[0];
+
+var newImg = document.createElement('img');
+newImg.src = 'http://placekitten.com/400/300';
+newImg.style.border = '1px solid black';
+pageNode.appendChild(newImg);
+
+var newParagraph = document.createElement('p');
+var paragraphText = document.createTextNode('Squee!');
+newParagraph.appendChild(paragraphText);
+pageNode.appendChild(newParagraph);
+        </code></pre>
+            </section>
+            <section>
+        <h3>Let's Develop It</h3>
+                <p class="copy--small box--small">Create a new paragraph element and add it to a div on your page.</p>
+      </section>
+    </section>
+
+    <section>
+      <h3>Review</h3>
+      <ul class="copy--small box--small list--tall">
+        <li>Objects</li>
+        <li>Manipulating the DOM</li>
+      </ul>
+    </section>
+</section>
+
+<section>
+      <section>
+          <h3>Events</h3>
+          <p class="copy--small box--small">An 'event' is a type of object that is created when the user interacts with a web page.</p>
+          <p class="copy--small box--small">For example, JS creates an event when a user clicks an element.</p>
+          <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+element.onclick = function () {
+  //code to execute when the click happens
+};
+          </code></pre>
+      </section>
+      <section>
+          <h3>Types of Events</h3>
+          <p class="copy--small box--small">There are a <a href="http://www.w3schools.com/jsref/dom_obj_event.asp">variety of events</a>. Some of the most common:</p>
+          <ul class="copy--small box--small list--tall">
+              <li>onclick: The event occurs when the user clicks on an element</li>
+              <li>onmouseover: The event occurs when the pointer is moved onto an element</li>
+              <li>onkeyup: The event occurs when the user releases a key</li>
+              <li>onload: The event occurs when a document has been loaded</li>
+              <li>onfocus: The event occurs when an element gets focus</li>
+          </ul>
+      </section>
+      <section>
+          <h3>Events and Code</h3>
+          <p class="copy--small box--small">How do you make an event trigger some code?</p>
+          <ol class="copy--small box--small list--tall">
+              <li>Break your code into functions</li>
+              <li>Associate a function with a JavaScript event</li>
+          </ol>
+      </section>
+      <section>
+          <h3>Calling Functions from HTML</h3>
+          <p class="copy--small box--small">You can call a function directly from your HTML code:</p>
+          <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+&lt;button id="clickMe" onclick="sayHi()"&gt;Click Me!&lt;/button&gt;
+          </code></pre>
+          <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+function sayHi() {
+  alert('Hi!');
+}
+          </code></pre>
+      </section>
+      <section>
+          <h3>Listening Functions</h3>
+          <p class="copy--small box--small">Listening functions work like many of the other things we have done. First, find the object:</p>
+          <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+var myTarget = document.getElementById('clickMe');
+          </code></pre>
+          <p class="copy--small box--small">Then add an event to that object:</p>
+          <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+myTarget.onclick = function(){
+  alert('Hi!');
+}
+          </code></pre>
+      </section>
+      <section>
+          <h3>Let's Develop It</h3>
+          <p class="copy--small box--small">Download <a href="files/class4.zip">this week's sample code</a>.</p>
+          <p class="copy--small box--small">Make some JavaScript code fire after an <code contenteditable>onmouseover</code> event. Try adding the event to the HTML and adding a listening function.</p>
+
+      </section>
+</section>
+
+<section>
+      <section>
+          <h3>Preventing Defaults</h3>
+          <p class="copy--small box--small">Elements like buttons and links have default behaviors. However, the <code contenteditable>event</code> objects has a built-in method to handle that:</p>
+          <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+element.onclick = function (event) {
+  event.preventDefault();
+};
+
+          </code></pre>
+      </section>
+
+      <section>
+          <h3>This</h3>
+          <p class="copy--small box--small">The keyword <code contenteditable>this</code> references the element that the user has just interacted with:</p>
+          <pre style="height: 200px; overflow: hidden;"><code contenteditable>
+element.onmouseover = function (event) {
+  console.log(this);
+};
+
+element.onclick = function (event) {
+  this.style.backgroundColor = 'red';
+  this.innerHTML = 'I've been clicked!';
+};
+          </code></pre>
+      </section>
+      <section>
+          <h3>Let's Develop It</h3>
+          <p class="copy--small box--small">Write code that targets this link:</p>
+          <pre style="height: 80px; overflow: hidden;"><code contenteditable>
+&lt;a href="http://girldevelopit.com/" id="gdiLink"&gt;Girl Develop It&lt;/a&gt;
+          </code></pre>
+          <p class="copy--small box--small">When a user clicks the link, the page should display an error message instead of going to the Girl Develop It homepage.</p>
+      </section>
+  </section>
+
+  <section>
+      <section>
+          <h3>Forms</h3>
+          <p class="copy--small box--small">You can collect information from users to use in functions. The most common method is an HTML form:</p>
+          <pre style="height: 200px; overflow: hidden;"><code contenteditable>
+&lt;form id="temperatureForm"&gt;
+  &lt;label for="temp"&gt;Temperature:&lt;/label&gt;
+  &lt;input type="text" id="temp" size="3"/&gt; degrees in
+  &lt;input type="radio" name="tempFormat" value="F" checked /&gt;Fahrenheit
+  &lt;input type="radio" name="tempFormat" value="C" /&gt;Celsius &lt;br /&gt;
+  &lt;input type="submit" id="tempSubmitButton" value="Submit" /&gt;
+&lt;/form&gt;
+          </code></pre>
+      </section>
+      <section>
+          <h3>Retrieving Form Data</h3>
+          <p class="copy--small box--small">You retrieve the values of form elements using the <code contenteditable>value</code> method:</p>
+          <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+var temperature = document.getElementById('temp').value;
+console.log(temperature);
+          </code></pre>
+          <p class="copy--small box--small">You can retrieve the value of a form at any time.<br/>Try <code contenteditable>onblur</code> (when a form element loses focus).</p>
+      </section>
+      <section>
+          <h3>Radio Buttons</h3>
+          <p class="copy--small box--small">Radio buttons usually do not have IDs,<br/>so you will need to use an array:</p>
+          <pre style="height: 240px; overflow: hidden;"><code contenteditable>
+var radios = document.getElementsByName('tempFormat');
+
+for (var i = 0, length = radios.length; i &lt; length; i++) {
+  if (radios[i].checked) {
+    var radioButtonValue = radios[i].value;
+    // only one radio can be checked, so stop now
+    break;
   }
+}
           </code></pre>
-                  <pre style="height: 140px; overflow: hidden;"><code contenteditable>
-  var bananas = 5;
+      </section>
+       <section>
+          <h3>Submit buttons</h3>
+          <p class="copy--small box--small">If you are going to retrieve form values with the submit button, be sure to prevent the default action!</p>
+          <pre style="height: 200px; overflow: hidden;"><code contenteditable>
+var submitButton = document.getElementById('tempSubmitButton');
 
-  if (bananas &gt; 0) {
-    console.log('You have some bananas!');
-  }
+submitButton.onclick = function (event) {
+  event.preventDefault();
+  var temperature = document.getElementById('temp').value;
+  console.log(temperature);
+}
+<!--line 84 has a purple { opening bracket, but line 188 has a white } closing bracket. should they be the same color?-->
           </code></pre>
-          </section>
+      </section>
+      <section>
+          <h3>Let's Develop It</h3>
+          <p class="copy--small box--small">Collect a value from the input box on the page.</p>
+          <p class="copy--small box--small">Use it inside a function of some kind. For example, collect a number and multiply it by five or collect a name and display a greeting.</p>
+      </section>
+</section>
 
-          <section>
-            <h3>Comparison Operators</h3>
-            <table class="copy--xsmall">
-                <thead>
-                  <tr>
-                    <th width="150px"><strong>Example</strong></th>
-                    <th width="250px"><strong>Name</strong></th>
-                    <th><strong>Result</strong></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                   <td><code contenteditable>a == b</code></td>
-                   <td>Equal</td>
-                   <td><code contenteditable>true</code> if a is equal to b (can be different types).</td>
-                  </tr>
-                  <tr>
-                   <td><code contenteditable>a === b</code></td>
-                   <td>Identical</td>
-                   <td>
-                    <code contenteditable>true</code> if a is equal to b, and the same type. </td>
-                  </tr>
-                  <tr>
-                   <td><code contenteditable>a != b</code></td>
-                   <td>Not equal</td>
-                   <td><code contenteditable>true</code> if a is not equal to b (can be different types).</td>
-                  </tr>
-                  <tr>
-                   <td><code contenteditable>a !== b</code></td>
-                   <td>Not identical</td>
-                   <td>
-                    <code contenteditable>true</code> if a is not equal to b, or they are not the same type.</td>
-                  </tr>
-                  <tr>
-                   <td><code contenteditable>a &lt; b</code></td>
-                   <td>Less than</td>
-                   <td><code contenteditable>true</code> if a is strictly less than b.</td>
-                  </tr>
-                  <tr>
-                   <td><code contenteditable>a &gt; b</code></td>
-                   <td>Greater than</td>
-                   <td><code contenteditable>true</code> if a is strictly greater than b.</td>
-                  </tr>
-                  <tr>
-                   <td><code contenteditable>a &lt;= b</code></td>
-                   <td>Less than or equal to </td>
-                   <td><code contenteditable>true</code> if a is less than or equal to b.</td>
-                  </tr>
-                  <tr>
-                   <td><code contenteditable>a &gt;= b</code></td>
-                   <td>Greater than or equal to </td>
-                   <td><code contenteditable>true</code> if a is greater than or equal to b.</td>
-                  </tr>
-                </tbody>
-            </table>
-          </section>
-          <section>
-              <h3>Watch out!</h3>
-              <p class="copy--small box--small">Don't mix up <code contenteditable>=</code> and <code contenteditable>==</code></p>
-          </section>
-          <section>
-            <h3>Let's Develop It</h3>
-            <p class="copy--small box--small">Make a variable called "temperature." Write some code that tells you to put on a coat if it is below 50 degrees.</p>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3>The if/else statement</h3>
-            <p class="copy--small box--small">Use else to provide an alternate set of instructions.</p>
-            <pre><code contenteditable>
-  var age = 28;
-
-  if (age &gt;= 16) {
-    console.log('Yay, you can drive!');
-  } else {
-    console.log('Sorry, but you have ' + (16 - age) +
-    ' years until you can drive.');
-  }
+<section>
+      <section>
+          <h3>Timing Events</h3>
+          <p class="copy--small box--small">In JavaScript, it is possible to execute some code<br/>at specified time intervals.</p>
+          <ul class="copy--xsmall box--small list--tall">
+              <li><code contenteditable>setInterval()</code> executes a function over and over again, at specified time intervals</li>
+              <li><code contenteditable>setTimeout()</code>  executes a function, once, after waiting a specified number of milliseconds</li>
+          </ul>
+      </section>
+      <section>
+          <h3>setInterval</h3>
+          <p class="copy--small box--small">The syntax for <code contenteditable>setInterval()</code> is:</p>
+          <pre style="height: 80px; overflow: hidden;"><code contenteditable>
+setInterval(function, milliseconds);
           </code></pre>
-          </section>
-          <section>
-              <h3>The if/else if/else statement</h3>
-              <p class="copy--small box--small">If you have multiple conditions, you can use else if.</p>
-              <pre><code contenteditable>
-  var age = 20;
+          <p class="copy--small box--small">For example, this is a simple clock:</p>
+          <pre style="height: 200px; overflow: hidden;"><code contenteditable>
+var simpleClock = setInterval(myClock, 1000);
 
-  if (age &gt;= 35) {
-    console.log('You can vote AND hold any place in government!');
-  } else if (age &gt;= 25) {
-    console.log('You can vote AND run for the Senate!');
-  } else if (age &gt;= 18) {
-    console.log('You can vote!');
-  } else {
-    console.log('You can\'t vote, but you can still write your representatives.');
-  }
+function myClock() {
+  var d = new Date();
+  var t = d.toLocaleTimeString();
+  document.getElementById('resultsBox').innerHTML = t;
+}
+<!--line 214 has a purple { opening bracket, but line 218 has a white closing bracket, should it also be purple?}  -->
           </code></pre>
-          </section>
-
-          <section>
-            <h3>Let's Develop It</h3>
-                  <p class="copy--small box--small">Modify your "wear a coat" code for these conditions:</p>
-                  <ol class="copy--small box--small list--tall">
-                      <li>If it is less than 50 degrees, wear a coat.</li>
-                      <li>If it is less than 30 degrees, wear a coat and a hat.</li>
-                      <li>If it is less than 0 degrees, stay inside.</li>
-                      <li>Otherwise, wear whatever you want.</li>
-                  </ol>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3>Logical Operators</h3>
-                    <table class="copy--xsmall" style="width: auto; margin: 0 auto;">
-                      <thead>
-                        <tr>
-                          <th width="200px">Example</th>
-                          <th width="150px">Name</th>
-                          <th width="300px">Result</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                         <td><code>a &amp;&amp; b</code></td>
-                         <td>And</td>
-                         <td><code contenteditable>true</code> if both a and b are <code contenteditable>true</code>.</td>
-                        </tr>
-                        <tr>
-                        <td><code>a || b</code></td>
-                         <td>Or</td>
-                         <td><code contenteditable>true</code> if either a or b is <code contenteditable>true</code>.</td>
-                        </tr>
-                        <tr>
-                         <td><code>! a</code></td>
-                         <td>Not</td>
-                         <td><code contenteditable>true</code> if a is not <code contenteditable>true</code>.</td>
-                        </tr>
-                       </tbody>
-                  </table>
-          </section>
-
-          <section>
-                  <h3>Using logical operators</h3>
-                  <p class="copy--small box--small">You can use these operators to combine conditions.</p>
-                  <pre><code contenteditable>
-  var bananas = 5;
-
-  if (bananas &gt;=2 &amp;&amp; bananas &lt;7) {
-    console.log('You have a reasonable number of bananas');
-  } else {
-    console.log('Check your banana supply');
-  }
+      </section>
+      <section>
+          <h3>clearInterval</h3>
+          <p class="copy--small box--small">You can use <code contenteditable>clearInterval()</code> to stop a setInterval loop:</p>
+          <pre style="height: 80px; overflow: hidden;"><code contenteditable>
+clearInterval(intervalVariable);
           </code></pre>
-          </section>
-
-          <section>
-            <h3>Let's Develop It</h3>
-                  <p class="copy--small box--small">Add a logical operator to your what to wear program.</p>
-          </section>
-        </section>
-
-        <section>
-          <section>
-                  <h3>While loops</h3>
-                  <p class="copy--small box--small">While will repeat the same code over and over<br/>until some condition is met.</p>
-                  <pre><code contenteditable>
-  var bottlesOfBeer = 99;
-
-  while (bottlesOfBeer &gt;= 1) {
-    console.log(bottlesOfBeer + ' bottles of beer on the wall');
-    bottlesOfBeer = bottlesOfBeer - 9;
-  }
-            </code></pre>
-          </section>
-          <section>
-            <h3>Infinite Loops</h3>
-                  <p class="copy--small box--small">Make sure something changes in the loop, or your loop will go on forever...</p>
-          </section>
-          <section>
-                  <h3>For loops</h3>
-                  <p class="copy--small box--small">For loops are very similar, but you declare a counter in the statement.</p>
-                  <pre><code contenteditable>
-  //will count 1 to 10
-  for (var i = 1; i &lt;= 10; i++) {
-    console.log(i);
-  }
+          <p class="copy--small box--small">To stop our clock:</p>
+          <pre style="height: 100px; overflow: hidden;"><code contenteditable>
+function myStopFunction() {
+  clearInterval(simpleClock);
+}
+<!--line 230 has a purple opening bracket { but line 232 has a white } closing bracket, should they be the same color?  -->
           </code></pre>
-          </section>
-          <section>
-                  <h3>Loops and logic</h3>
-                  <p class="copy--small box--small">You can add other statements or logical operators inside the loops.</p>
-                  <pre><code contenteditable>
-  //Count from 1 to 50
-  for (var i = 1; i &lt;= 50; i++) {
-    console.log(i);
-
-    //Says 'Buzz' after multiples of three
-    if (i % 3 == 0) {
-      console.log('Buzz');
-    }
-
-    //Says 'Bang' after multiples of five
-    if (i % 5 == 0) {
-      console.log('Bang');
-    }
-  }
+      </section>
+      <section>
+          <h3>setTimeout</h3>
+          <p class="copy--small box--small">The method <code contenteditable>setTimeout()</code> is similar, but it will only run once:</p>
+          <pre style="height: 80px; overflow: hidden;"><code contenteditable>
+setTimeout(function, milliseconds);
           </code></pre>
-          </section>
-          <section>
-                  <h3>Break</h3>
-                  <p class="copy--small box--small">To exit a loop, use the break statement.</p>
-                  <pre><code contenteditable>
-  //Count from 100 to 200
-  for (var i = 100; i &lt;= 200; i++) {
-    console.log('Testing ' + i);
+          <p class="copy--small box--small">For example, this code will wait 3 seconds, then create a popup box, unless the user triggers the <code contenteditable>clearTimeout():</code></p>
+          <pre style="height: 220px; overflow: hidden;"><code contenteditable>
+var helloBox;
 
-    //Stop at the first multiple of 7
-    if (i % 7 == 0) {
-      console.log('Found it! ' + i);
-      break;
-    }
-  }
+function sayHello() {
+  helloBox = setTimeout(function(){alert('Hello')},3000);
+}
+
+function dontSayIt() {
+  clearTimeout(helloBox);
+}
+<!--line 245 and line 248 have purple opening brackets, but lines 247 and 250 have white closing brackets, should they all be the same colors?  -->
           </code></pre>
-          </section>
-          <section>
-            <h3>Let's Develop It</h3>
-                  <p class="copy--small box--small">Write a loop that gives you the 9's times table,<br /> from 9 x 1 = 9 to 9 x 12 = 108.</p>
-                  <p class="copy--small box--small">Finish early? Try using a loop inside a loop to write all the times tables, from 1 to 12.</p>
-          </section>
-        </section>
+      </section>
+      <section>
+          <h3>Animations</h3>
+          <p class="copy--small box--small">By changing values slowly over time,<br/>we can create simple animations:</p>
+          <pre><code contenteditable>
+          var targetPic = document.getElementById('turtlePic');
 
-        <section>
-          <section>
-                  <h3>Arrays</h3>
-                  <p class="copy--small box--small">Arrays are ordered lists of values.</p>
-                  <pre style="height: 160px; overflow: hidden;"><code contenteditable>
-  var arrayName = [element0, element1, ...];
+          targetPic.onclick = function () {
+            var leftMarginValue = 0;
+
+            function increaseMargin() {
+              leftMarginValue++;  // update parameter each time
+              targetPic.style.marginLeft = leftMarginValue + 'px'; //set left margin
+              if (leftMarginValue === 200) { // check finish condition
+                  clearInterval(movePic);
+              }
+            }
+
+            var movePic = setInterval(function(){increaseMargin()}, 10); // update every 10ms
+          }
+<!--lines 259, and 261, have purple opening { brackets, lines 266, and 268} have white closing brackets. line 267 has a purple opening bracket { and a white closing bracket }, should these all match? -->
           </code></pre>
-                  <p class="copy--small box--small">You can put different types of data into an array.</p>
-                  <pre style="height: 160px; overflow: hidden;"><code contenteditable>
-  var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple'];
-  var lotteryNumbers = [33, 72, 64, 18, 17, 85];
-  var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
-          </code></pre>
-          </section>
-          <section>
-                  <h3>Array Length</h3>
-                  <p class="copy--small box--small">The length property tells you how many things are in an array</p>
-                  <pre><code contenteditable>
-  var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple'];
-  console.log(rainbowColors.length);
-          </code></pre>
-          </section>
-          <section>
-                  <h3>Using Arrays</h3>
-                  <p class="copy--small box--small">You can access items with <i>"bracket notation"</i><br/>by using the position of the object you want.</p>
-                  <p class="copy--small box--small">In JavaScript, you start counting at zero.</p>
+      </section>
+      <section>
+          <h3>Let's Develop It</h3>
+          <p class="copy--small box--small">Using the function from the previous slide as a base, try changing some animation parameters. What happens?</p>
+      </section>
+</section>
 
-                  <pre><code contenteditable>
-  var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple'];
-  var firstColor = rainbowColors[0];
-  var lastColor = rainbowColors[5];
-          </code></pre>
-          </section>
-          <section>
-                  <h3>Changing arrays</h3>
-                  <p class="copy--small box--small">You can use bracket notation to change an item in an array</p>
-                  <pre><code contenteditable>
-  var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
-  myFavoriteThings[0] = 'Asparagus';
-                  </code></pre>
-          </section>
-          <section>
-                  <h3>Expanding arrays</h3>
-                  <p class="copy--small box--small">Arrays do not have a fixed length.<br/>You can use <code>push</code> to add something to an array.</p>
-                  <pre><code contenteditable>
-  var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
-  myFavoriteThings.push('Dancing');
-                  </code></pre>
-          </section>
-          <section>
-            <h3>Let's Develop It</h3>
-                  <p class="copy--small box--small">Create an array of your favorite foods.<br/>Log a few values onto your screen.</p>
-          </section>
-        </section>
-
-        <section>
-          <section>
-                  <h3>Iterating through arrays</h3>
-                  <p class="copy--small box--small">Use a for loop to easily process each item in an array.</p>
-                  <pre><code contenteditable>
-  var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple'];
-
-  for (var i = 0; i &lt; rainbowColors.length; i++) {
-    console.log(rainbowColors[i]);
-  }
-                  </code></pre>
-          </section>
-
-          <section>
-            <h3>Let's Develop It</h3>
-                  <p class="copy--small box--small">Use a loop to print out a list of all your favorite foods.</p>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3>Resources</h3>
-              <ul class="copy--small box--small list--tall">
+<section>
+    <section>
+        <h3>Resources</h3>
+            <ul class="copy--small box--small list--tall">
                 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">JavaScript Guide</a>, from the Mozilla Developers Network.</li>
                 <li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">Codecademy</a>, with interactive JavaScript lessons to help you review.</li>
-              </ul>
-          </section>
+                <li><a href="https://www.khanacademy.org/computing/cs/programming">Khan Academy</a> has a lot more information abut drawing and animations.</li>
+            </ul>
+    </section>
 
-          <section>
-              <h3>Homework</h3>
-              <div class="box">
-                <a href="homework.html">Homework!!</a>
-              </div>
-          </section>
+  <section>
+    <img src="images/gdi_logo_badge.png" class="img--bare" height="450px" />
+    <div class="box--small">
+      <h3><span class="green">Intro to JavaScript</span></h3>
+      <h4><span class="blue">Thank you for joining us!</span></h4>
+    </div>
+  </section>
+</section>
 
-          <section>
-            <img src="images/gdi_logo_badge.png" class="img--bare" height="450px" />
-            <div class="box--small">
-              <h3><span class="green">Intro to JavaScript</span></h3>
-              <h4><a href="class3.html"><span class="blue">Part 3 &raquo;</span></a></h4>
-            </div>
-          </section>
-        </section>
       </div><!-- Close .slides -->
 
       <footer>

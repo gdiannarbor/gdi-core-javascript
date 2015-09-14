@@ -195,7 +195,7 @@
           <section>
               <h3>Variable Values</h3>
               <ul class="copy--small list--tall box--small">
-                  <li>When you first create a variable, it does not have a value (it is <code contenteditable>null</code>).</li>
+                  <li>When you first create a variable, it does not have a value (it is <code contenteditable>undefined</code>).</li>
                   <li class="fragment">You can set a value for a variable.</li>
                   <li class="fragment">Variables can hold different types of information, like words, numbers, and collections of data.</li>
                   <li class="fragment">The value of a variable can change over time.</li>
@@ -454,6 +454,392 @@
         </section>
 
         <section>
+          <h3>Review</h3>
+          <p class="copy--small box--small">In this code, spot the comments, variables, operator, function, argument, and return value.</p>
+          <pre><code contenteditable>
+function calculateTip(total) {
+  var tipPercent = 0.15; //Can be changed
+  return (total * tipPercent);
+}
+
+var billPreTip = 10;
+var billTip = calculateTip(billPreTip);
+var receipt = 'Meal: ' + billPreTip + ' Tip: ' + billTip +
+  ' Total: ' + (billPreTip + billTip);
+console.log(receipt);
+      </code></pre>
+        </section>
+      </section>
+
+      <section>
+        <section>
+            <h3>Variable Scope</h3>
+            <p class="copy--small box--small">The scope of a variable is how long the computer will remember it.</p>
+        </section>
+        <section>
+            <h3>Global Scope</h3>
+            <p class="copy--small box--small">A variable declared outside a function has a <span class="yellow">global</span> scope and can be accessed anywhere, even in a function.</p>
+              <pre><code contenteditable>
+var awesomeGroup = 'Girl Develop It'; //Global scope
+
+function whatIsAwesome() {
+  console.log(awesomeGroup + ' is pretty awesome.'); //Will work
+}
+
+whatIsAwesome();
+
+      </code></pre>
+        </section>
+
+        <section>
+            <h3>Local Scope</h3>
+            <p class="copy--small box--small">A variable declared within a function has a <span class="yellow">local</span> scope and can only be accessed within that function.</p>
+            <pre><code contenteditable>
+function whatIsAwesome() {
+  var awesomeGroup = 'Girl Develop It'; //Local scope
+  console.log('I made a variable called awesomeGroup with a value of ' + awesomeGroup); //Will work
+}
+<!--on the slide, line 84 has a purple { and it's closing bracket } on line 87 is white. do they need to be the same color?-->
+whatIsAwesome();
+
+console.log(awesomeGroup + ' is pretty awesome.'); //Won't work
+      </code></pre>
+        </section>
+
+        <section>
+            <h3>Boolean Variables</h3>
+            <p class="copy--small box--small">Boolean variables represent the logical values True and False</p>
+            <pre><code contenteditable>
+var catsAreBest = true;
+var dogsRule = false;
+    </code></pre>
+            <p class="copy--small box--small">If you try to use another variable as a boolean, JavaScript will guess.<br/>The number <code contenteditable>0</code>, the empty string <code contenteditable>''</code>, <code contenteditable>undefined</code>, and <code contenteditable>null</code> are considered false, everything else reads as true.</p>
+        </section>
+
+        <section>
+            <h3>The if statement</h3>
+            <p class="copy--small box--small">Use if to decide which lines of code to execute, based on a condition.</p>
+            <pre style="height: 140px; overflow: hidden;"><code contenteditable>
+if (condition) {
+  // statements to execute
+}
+        </code></pre>
+                <pre style="height: 140px; overflow: hidden;"><code contenteditable>
+var bananas = 5;
+
+if (bananas &gt; 0) {
+  console.log('You have some bananas!');
+}
+        </code></pre>
+        </section>
+
+        <section>
+          <h3>Comparison Operators</h3>
+          <table class="copy--xsmall">
+              <thead>
+                <tr>
+                  <th width="150px"><strong>Example</strong></th>
+                  <th width="250px"><strong>Name</strong></th>
+                  <th><strong>Result</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                 <td><code contenteditable>a == b</code></td>
+                 <td>Equal</td>
+                 <td><code contenteditable>true</code> if a is equal to b (can be different types).</td>
+                </tr>
+                <tr>
+                 <td><code contenteditable>a === b</code></td>
+                 <td>Identical</td>
+                 <td>
+                  <code contenteditable>true</code> if a is equal to b, and the same type. </td>
+                </tr>
+                <tr>
+                 <td><code contenteditable>a != b</code></td>
+                 <td>Not equal</td>
+                 <td><code contenteditable>true</code> if a is not equal to b (can be different types).</td>
+                </tr>
+                <tr>
+                 <td><code contenteditable>a !== b</code></td>
+                 <td>Not identical</td>
+                 <td>
+                  <code contenteditable>true</code> if a is not equal to b, or they are not the same type.</td>
+                </tr>
+                <tr>
+                 <td><code contenteditable>a &lt; b</code></td>
+                 <td>Less than</td>
+                 <td><code contenteditable>true</code> if a is strictly less than b.</td>
+                </tr>
+                <tr>
+                 <td><code contenteditable>a &gt; b</code></td>
+                 <td>Greater than</td>
+                 <td><code contenteditable>true</code> if a is strictly greater than b.</td>
+                </tr>
+                <tr>
+                 <td><code contenteditable>a &lt;= b</code></td>
+                 <td>Less than or equal to </td>
+                 <td><code contenteditable>true</code> if a is less than or equal to b.</td>
+                </tr>
+                <tr>
+                 <td><code contenteditable>a &gt;= b</code></td>
+                 <td>Greater than or equal to </td>
+                 <td><code contenteditable>true</code> if a is greater than or equal to b.</td>
+                </tr>
+              </tbody>
+          </table>
+        </section>
+        <section>
+            <h3>Watch out!</h3>
+            <p class="copy--small box--small">Don't mix up <code contenteditable>=</code> and <code contenteditable>==</code></p>
+        </section>
+        <section>
+          <h3>Let's Develop It</h3>
+          <p class="copy--small box--small">Make a variable called "temperature." Write some code that tells you to put on a coat if it is below 50 degrees.</p>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h3>The if/else statement</h3>
+          <p class="copy--small box--small">Use else to provide an alternate set of instructions.</p>
+          <pre><code contenteditable>
+var age = 28;
+
+if (age &gt;= 16) {
+  console.log('Yay, you can drive!');
+} else {
+  console.log('Sorry, but you have ' + (16 - age) +
+  ' years until you can drive.');
+}
+        </code></pre>
+        </section>
+        <section>
+            <h3>The if/else if/else statement</h3>
+            <p class="copy--small box--small">If you have multiple conditions, you can use else if.</p>
+            <pre><code contenteditable>
+var age = 20;
+
+if (age &gt;= 35) {
+  console.log('You can vote AND hold any place in government!');
+} else if (age &gt;= 25) {
+  console.log('You can vote AND run for the Senate!');
+} else if (age &gt;= 18) {
+  console.log('You can vote!');
+} else {
+  console.log('You can\'t vote, but you can still write your representatives.');
+}
+        </code></pre>
+        </section>
+
+        <section>
+          <h3>Let's Develop It</h3>
+                <p class="copy--small box--small">Modify your "wear a coat" code for these conditions:</p>
+                <ol class="copy--small box--small list--tall">
+                    <li>If it is less than 50 degrees, wear a coat.</li>
+                    <li>If it is less than 30 degrees, wear a coat and a hat.</li>
+                    <li>If it is less than 0 degrees, stay inside.</li>
+                    <li>Otherwise, wear whatever you want.</li>
+                </ol>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h3>Logical Operators</h3>
+                  <table class="copy--xsmall" style="width: auto; margin: 0 auto;">
+                    <thead>
+                      <tr>
+                        <th width="200px">Example</th>
+                        <th width="150px">Name</th>
+                        <th width="300px">Result</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                       <td><code>a &amp;&amp; b</code></td>
+                       <td>And</td>
+                       <td><code contenteditable>true</code> if both a and b are <code contenteditable>true</code>.</td>
+                      </tr>
+                      <tr>
+                      <td><code>a || b</code></td>
+                       <td>Or</td>
+                       <td><code contenteditable>true</code> if either a or b is <code contenteditable>true</code>.</td>
+                      </tr>
+                      <tr>
+                       <td><code>!a</code></td>
+                       <td>Not</td>
+                       <td><code contenteditable>true</code> if a is not <code contenteditable>true</code>.</td>
+                      </tr>
+                     </tbody>
+                </table>
+        </section>
+
+        <section>
+                <h3>Using logical operators</h3>
+                <p class="copy--small box--small">You can use these operators to combine conditions.</p>
+                <pre><code contenteditable>
+var bananas = 5;
+
+if (bananas &gt;=2 &amp;&amp; bananas &lt;7) {
+  console.log('You have a reasonable number of bananas');
+} else {
+  console.log('Check your banana supply');
+}
+        </code></pre>
+        </section>
+
+        <section>
+          <h3>Let's Develop It</h3>
+                <p class="copy--small box--small">Add a logical operator to your what to wear program.</p>
+        </section>
+      </section>
+
+      <section>
+        <section>
+                <h3>While loops</h3>
+                <p class="copy--small box--small">While will repeat the same code over and over<br/>until some condition is met.</p>
+                <pre><code contenteditable>
+var bottlesOfBeer = 99;
+
+while (bottlesOfBeer &gt;= 1) {
+  console.log(bottlesOfBeer + ' bottles of beer on the wall');
+  bottlesOfBeer = bottlesOfBeer - 9;
+}
+          </code></pre>
+        </section>
+        <section>
+          <h3>Infinite Loops</h3>
+                <p class="copy--small box--small">Make sure something changes in the loop, or your loop will go on forever...</p>
+        </section>
+        <section>
+                <h3>For loops</h3>
+                <p class="copy--small box--small">For loops are very similar, but you declare a counter in the statement.</p>
+                <pre><code contenteditable>
+//will count 1 to 10
+for (var i = 1; i &lt;= 10; i++) {
+  console.log(i);
+}
+        </code></pre>
+        </section>
+        <section>
+                <h3>Loops and logic</h3>
+                <p class="copy--small box--small">You can add other statements or logical operators inside the loops.</p>
+                <pre><code contenteditable>
+//Count from 1 to 50
+for (var i = 1; i &lt;= 50; i++) {
+  console.log(i);
+
+  //Says 'Buzz' after multiples of three
+  if (i % 3 == 0) {
+    console.log('Buzz');
+  }
+
+  //Says 'Bang' after multiples of five
+  if (i % 5 == 0) {
+    console.log('Bang');
+  }
+}
+        </code></pre>
+        </section>
+        <section>
+                <h3>Break</h3>
+                <p class="copy--small box--small">To exit a loop, use the break statement.</p>
+                <pre><code contenteditable>
+//Count from 100 to 200
+for (var i = 100; i &lt;= 200; i++) {
+  console.log('Testing ' + i);
+
+  //Stop at the first multiple of 7
+  if (i % 7 == 0) {
+    console.log('Found it! ' + i);
+    break;
+  }
+}
+        </code></pre>
+        </section>
+        <section>
+          <h3>Let's Develop It</h3>
+                <p class="copy--small box--small">Write a loop that gives you the 9's times table,<br /> from 9 x 1 = 9 to 9 x 12 = 108.</p>
+                <p class="copy--small box--small">Finish early? Try using a loop inside a loop to write all the times tables, from 1 to 12.</p>
+        </section>
+      </section>
+
+      <section>
+        <section>
+                <h3>Arrays</h3>
+                <p class="copy--small box--small">Arrays are ordered lists of values.</p>
+                <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+var arrayName = [element0, element1, ...];
+        </code></pre>
+                <p class="copy--small box--small">You can put different types of data into an array.</p>
+                <pre style="height: 160px; overflow: hidden;"><code contenteditable>
+var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple'];
+var lotteryNumbers = [33, 72, 64, 18, 17, 85];
+var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
+        </code></pre>
+        </section>
+        <section>
+                <h3>Array Length</h3>
+                <p class="copy--small box--small">The length property tells you how many things are in an array</p>
+                <pre><code contenteditable>
+var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple'];
+console.log(rainbowColors.length);
+        </code></pre>
+        </section>
+        <section>
+                <h3>Using Arrays</h3>
+                <p class="copy--small box--small">You can access items with <i>"bracket notation"</i><br/>by using the position of the object you want.</p>
+                <p class="copy--small box--small">In JavaScript, you start counting at zero.</p>
+
+                <pre><code contenteditable>
+var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple'];
+var firstColor = rainbowColors[0];
+var lastColor = rainbowColors[5];
+        </code></pre>
+        </section>
+        <section>
+                <h3>Changing arrays</h3>
+                <p class="copy--small box--small">You can use bracket notation to change an item in an array</p>
+                <pre><code contenteditable>
+var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
+myFavoriteThings[0] = 'Asparagus';
+                </code></pre>
+        </section>
+        <section>
+                <h3>Expanding arrays</h3>
+                <p class="copy--small box--small">Arrays do not have a fixed length.<br/>You can use <code>push</code> to add something to an array.</p>
+                <pre><code contenteditable>
+var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
+myFavoriteThings.push('Dancing');
+                </code></pre>
+        </section>
+        <section>
+          <h3>Let's Develop It</h3>
+                <p class="copy--small box--small">Create an array of your favorite foods.<br/>Log a few values onto your screen.</p>
+        </section>
+      </section>
+
+      <section>
+        <section>
+                <h3>Iterating through arrays</h3>
+                <p class="copy--small box--small">Use a for loop to easily process each item in an array.</p>
+                <pre><code contenteditable>
+var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple'];
+
+for (var i = 0; i &lt; rainbowColors.length; i++) {
+  console.log(rainbowColors[i]);
+}
+                </code></pre>
+        </section>
+
+        <section>
+          <h3>Let's Develop It</h3>
+                <p class="copy--small box--small">Use a loop to print out a list of all your favorite foods.</p>
+        </section>
+      </section>
+
+        <section>
           <section>
               <h3>Resources</h3>
                   <ul class="copy--small list--tall box--small">
@@ -463,7 +849,7 @@
           </section>
 
           <section>
-              <h3>Homework</h3>
+              <h3>Homework (optional)</h3>
               <div class="box">
                 <a href="homework.html">Homework!!</a>
               </div>
